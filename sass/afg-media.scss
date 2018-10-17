@@ -337,7 +337,19 @@ section {
   margin-top: 24px !important;
   padding: 24px;
   position: relative;
-  text-align: left;
+
+  // default behavior for cards is to flip to row @ 768, and text becomes more crammed
+
+  @media only screen and (min-device-width: 768px) {
+    font-size: .8em;
+  }
+  @media only screen and (min-device-width: 992px) {
+    font-size: .9em;
+  }
+  @media only screen and (min-device-width: 1200px) {
+    font-size: 1em;
+  }
+
 }
 
 
@@ -401,9 +413,6 @@ section {
   font-weight: 700;
 }
 
-.afg-grid--home-services__body {
-  margin-top: 24px;
-}
 
 
 
@@ -424,6 +433,11 @@ section {
   @extend .flex-row__valign_top-align_center;
   @extend .flex-base--max;
 }
+
+.afg-card--why-us > .afg-card__body {
+  text-align: left;
+}
+
 
 .afg-home-soc {
   background-color: #d7d7db;
