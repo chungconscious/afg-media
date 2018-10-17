@@ -1,0 +1,446 @@
+/**************************
+ **************************
+  Base classes
+ **************************
+ **************************/
+
+
+section {
+  padding-bottom: 48px;
+  padding-top: 48px;
+}
+
+
+/**************************
+ **************************
+  Base formats
+ **************************
+ **************************/
+
+
+.afg-gutter-bottom {
+  margin-bottom: 24px !important;
+}
+
+
+/**************************
+ **************************
+  Base fonts
+ **************************
+ **************************/
+
+.afg-font--base-color {
+  color: $color-standard !important;
+}
+
+.afg-font--small {
+  font-size: .8em;
+}
+
+.afg-section-heading {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.afg-heading--1 {
+  color: $primary-color--hover; //#ffa61d; //$pop-color;
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: .5em;
+
+  @media only screen and (min-device-width: 992px) {
+    font-size: 3em;
+    margin-bottom: .85em;
+  }
+}
+
+.afg-heading--2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: .5em;
+
+  @media only screen and (min-device-width: 992px) {
+    font-size: 2.25em;
+    margin-bottom: .85em;
+  }
+}
+
+.afg-heading--4 {
+  font-weight: 700;
+  line-height: 1em;
+}
+
+
+
+.afg-stat-highlight {
+  color: $primary-color--hover; //$pop-color;
+  font-weight: 700;
+}
+
+
+
+
+/**************************
+ **************************
+  Base buttons, links, etc
+ **************************
+ **************************/
+
+.afg-btn {
+  &:link, &:hover, &:active, &:focus {
+    border-style: none;
+    border-radius: 5px;
+    border-style: none;
+
+    box-shadow: none;
+
+    color: inherit;
+    display: inline-block;
+
+    font-weight: 700;
+
+    outline: none !important;
+    padding: 24px;
+
+    text-decoration: none;
+
+    white-space: normal;
+  }
+}
+
+.afg-btn--long-text {
+  max-width: 260px;
+  min-height: 64px;
+}
+
+
+
+
+
+.afg-btn-cta, .afg-btn-cta:focus, .afg-btn-cta:active, .afg-btn-cta:focus:active {
+  background-color: $pop-color;
+}
+
+.afg-btn-cta:hover {
+  background-color: $pop-color--hover;
+}
+
+
+
+
+/**************************
+ **************************
+  Base grids
+ **************************
+ **************************/
+
+.afg-grid {
+  text-align: center;
+
+  @media only screen and (min-device-width: 512px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+// Base class: 1 / row in mobile
+.afg-grid-item {
+
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+
+  @media only screen and (min-device-width: 512px) {
+  }
+}
+
+
+/**************************
+  Grid - numbers per row
+ **************************/
+// Specific # / row - define width when > mobile
+
+
+.afg-grid-item--2-row {
+  @media only screen and (min-device-width: 768px) {
+    width: 50%;
+  }
+}
+.afg-grid-item--3-row {
+  @media only screen and (min-device-width: 768px) {
+    width: 33%;
+  }
+}
+.afg-grid-item--4-row {
+  @media only screen and (min-device-width: 768px) {
+    width: 25%;
+  }
+}
+
+
+
+
+/*
+ Define specific left & right padding based on placement to line up with edges.
+ Each position should have same total of L + R padding.
+ */
+
+/**************************
+  Grid - 2 / row
+ **************************/
+.afg-grid-item--2-row.afg-grid-item-1 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 0;
+    padding-right: 12px;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 0;
+    padding-right: 18px;
+  }
+}
+.afg-grid-item--2-row.afg-grid-item-2 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 12px;
+    padding-right: 0;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 18px;
+    padding-right: 0;
+  }
+}
+
+/**************************
+  Grid - 3 / row
+ **************************/
+.afg-grid-item--3-row.afg-grid-item-1 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 0;
+    padding-right: 12px;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 0;
+    padding-right: 18px;
+  }
+}
+.afg-grid-item--3-row.afg-grid-item-3 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 12px;
+    padding-right: 0;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 18px;
+    padding-right: 0;
+  }
+}
+.afg-grid-item--3-row.afg-grid-item-2 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+}
+
+/**************************
+  Grid - 4 / row
+ **************************/
+.afg-grid-item--4-row.afg-grid-item-1 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 0;
+    padding-right: 12px;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 0;
+    padding-right: 18px;
+  }
+}
+.afg-grid-item--4-row.afg-grid-item-4 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 12px;
+    padding-right: 0;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 18px;
+    padding-right: 0;
+  }
+}
+.afg-grid-item--4-row.afg-grid-item-2, .afg-grid-item--4-row.afg-grid-item-3 {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  @media only screen and (min-device-width: 992px) {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+}
+
+
+
+
+
+
+
+/**************************
+ **************************
+  Base info cards
+ **************************
+ **************************/
+
+.afg-card--icon-lead {
+  background-color: white;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
+  color: $color-standard;
+  font-size: 1.125em;
+
+  margin-top: 48px;
+  padding: 48px;
+  text-align: center;
+}
+
+
+
+
+.afg-card--title-lead {
+  //@extend .flex-column__valign_top-align_center;
+
+  background-color: white;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
+  color: $color-standard;
+  font-size: 1.125em;
+
+  margin-top: 48px;
+}
+
+
+// Padding & margin below account for expected image 64x64
+.afg-card__title {
+  background-color: #b6cfe4; //$primary-color-dark; //#e9ecef;
+  border-radius: 5px 5px 0 0;
+  border-style: none;
+  color: $color-standard;
+  font-weight: bold;
+  padding: 24px 24px 48px 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.afg-card__body {
+  margin-top: 24px !important;
+  padding: 24px;
+  position: relative;
+  text-align: left;
+}
+
+
+
+
+.afg-card--title-lead > .afg-card__body > .afg-card__img-wrapper {
+  height: 64px;
+  left: 50%;
+  margin-left: -32px;
+  max-width: 64px;
+  max-height: 64px;
+  position: absolute;
+  top: -60px;
+  width: 64px;
+}
+
+.afg-card--icon-lead > .afg-card__img-wrapper {
+  margin-bottom: 24px;
+}
+
+.afg-card__img {
+  height: 64px;
+  width: 64px;
+}
+
+
+.afg-card__cta-container {
+  margin-top: 36px;
+}
+
+
+
+
+
+
+
+
+/**************************
+ **************************
+  Page specific - home
+ **************************
+ **************************/
+
+
+/**************************
+  Services section
+ **************************/
+
+.afg-home-services {
+  background-color: $background-color;
+}
+
+.afg-grid--home-services {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  text-align: left;
+}
+
+.afg-grid--home-services__title {
+  font-weight: 700;
+}
+
+.afg-grid--home-services__body {
+  margin-top: 24px;
+}
+
+
+
+/**************************
+  Experience section
+ **************************/
+
+
+
+.afg-grid--home-experience {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  margin-top: 48px !important;
+}
+
+.afg-grid--home-why-us {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+}
+
+.afg-home-soc {
+  background-color: #d7d7db;
+
+  @media only screen and (min-device-width: 768px) {
+    background-image: url("/wp-content/uploads/banners/md/world-map.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  @media only screen and (min-device-width: 992px) {
+    background-image: url("/wp-content/uploads/banners/lg/world-map.png");
+    background-size: 1200px;
+  }
+}
+
+.afg-heading--experience-number {
+  margin-bottom: .25em;
+}
+
