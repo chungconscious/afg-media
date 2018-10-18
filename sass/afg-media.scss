@@ -1,3 +1,189 @@
+$pop-color: #F0B04B;
+$pop-color--hover: #F5BC64;
+$color-standard: rgba(0,0,0,.8);
+$general-body-color: #555;
+
+$media-break-point-desktop-xs: 512px;
+$media-break-point-desktop-sm: 768px;
+$media-break-point-desktop-md: 992px;
+
+
+/*
+cp
+Page: hide author and page added date info
+*/
+
+.home .entry-meta {
+  display: none;
+}
+.post-meta {
+  display: none !important;
+}
+.footer-credits {
+  display: none !important;
+}
+
+
+.iktsu-bg-light-grey {
+  background-color: #f1f1f1;
+
+}
+
+
+
+
+
+.iktsu-cta-default {
+  background-color: $pop-color !important;
+  border: 2px solid $pop-color !important;
+    /*
+    none !important;
+    */
+  border-radius: 5px !important;
+  color: $color-standard !important;
+  font-size: 1.9rem !important;
+  font-weight: bold !important;
+  outline: none !important;
+  padding: 24px !important;
+  text-transform: none;
+
+  &:hover {
+    opacity: .75 !important;
+  }
+}
+
+
+.iktsu_hero_wrapper {
+  -webkit-align-content: center !important;
+  align-content: center !important;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-flex-direction: column; /* Safari */
+  flex-direction:         column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap; /* Safari */
+  flex-wrap:         wrap;
+
+  display: flex;
+  margin: 0 0 48px 0;
+  min-height: 300px;
+  padding: 12px;
+
+  text-align: center;
+  height: 400px;
+
+  @media only screen and (min-width: $media-break-point-desktop-sm) {
+    padding: 24px;
+  }
+}
+
+
+
+.iktsu_hero_text_wrapper {
+  padding: 24px;
+}
+
+.iktsu_hero_text_background {
+ background-color: rgba(0,0,0,.4);
+}
+
+.iktsu_hero_image_container {
+ background-size: cover;
+}
+
+.iktsu_hero_title {
+  //  -webkit-align-self: center;
+  //  align-self: center;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.3em;
+  @media only screen and (min-width: $media-break-point-desktop-sm) {
+    font-size: 3em;
+  }
+}
+
+.iktsu_hero_title_multi {
+  padding: 24px 0 0 0;
+}
+
+.iktsu_hero_subtitle_1, .iktsu_hero_subtitle_2,
+.iktsu_hero_subtitle_3 {
+  font-size: 1.3em;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+.iktsu_hero_subtitle_1 {
+  padding: 24px 0 0 0;
+}
+
+.iktsu_hero_subtitle_2, .iktsu_hero_subtitle_3 {
+  padding: 12px 0 0 0;
+}
+
+
+
+
+
+// override body text
+p {
+
+  font-size: 1.2em !important;
+  @media only screen and (min-width: $media-break-point-desktop-sm) {
+
+  }
+  @media only screen and (min-width: $media-break-point-desktop-md) {
+  }
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+  }
+
+}
+
+
+// override main theme in case of long title
+.site-title {
+  @media only screen and (max-width: $media-break-point-desktop-xs - 1px) {
+    font-size: 12pt !important;
+  }
+}
+
+// override main theme CSS to do full width
+
+.content-area {
+  padding: 0 !important;
+}
+
+#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+.iktsu-cta-post-link {
+  color: $general-body-color !important;
+  font-size: .95em;
+}
+
+
+// override text color
+body {
+  color: $general-body-color;
+}
+
+// override container full to add padding
+.container-fluid {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+
+
+
+
+
 /**************************
  **************************
   Base classes
