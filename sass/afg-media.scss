@@ -1,11 +1,5 @@
-$pop-color: #F0B04B;
-$pop-color--hover: #F5BC64;
-$color-standard: rgba(0,0,0,.8);
-$general-body-color: #555;
+$todo-clean-general-body-color: #555;
 
-$media-break-point-desktop-xs: 512px;
-$media-break-point-desktop-sm: 768px;
-$media-break-point-desktop-md: 992px;
 
 
 /*
@@ -163,14 +157,14 @@ p {
 
 
 .iktsu-cta-post-link {
-  color: $general-body-color !important;
+  color: $todo-clean-general-body-color !important;
   font-size: .95em;
 }
 
 
 // override text color
 body {
-  color: $general-body-color;
+  color: $todo-clean-general-body-color;
 }
 
 // override container full to add padding
