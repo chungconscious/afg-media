@@ -12,6 +12,7 @@ section {
 
 
 
+
 /**************************
  **************************
   Base formats
@@ -63,6 +64,7 @@ section {
 }
 
 .afg-heading--2 {
+  color: #212B35;
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: .5em;
@@ -451,14 +453,14 @@ section {
   background-color: #e4e5e9;
 
   @media only screen and (min-width: 768px) {
-    background-image: url("/wp-content/uploads/banners/md/world-map.png");
+    background-image: url("/wp-content/uploads/media/banners/md/world-map.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
     padding: 96px 0;
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/banners/lg/world-map.png");
+    background-image: url("/wp-content/uploads/media/banners/lg/world-map.png");
     background-size: 1200px;
     padding: 120px 0;
   }
