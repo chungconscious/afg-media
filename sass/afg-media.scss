@@ -1,11 +1,11 @@
 $todo-clean-general-body-color: #555;
 
 
-
-/*
-cp
-Page: hide author and page added date info
-*/
+/**************************
+ **************************
+  WP override
+ **************************
+ **************************/
 
 .home .entry-meta {
   display: none;
@@ -17,128 +17,6 @@ Page: hide author and page added date info
   display: none !important;
 }
 
-
-/*
-.iktsu-bg-light-grey {
-  background-color: #f1f1f1;
-
-}
-
-
-.iktsu-cta-default {
-  background-color: $pop-color !important;
-  border: 2px solid $pop-color !important;
-  border-radius: 5px !important;
-  color: $color-standard !important;
-  font-size: 1.9rem !important;
-  font-weight: bold !important;
-  outline: none !important;
-  padding: 24px !important;
-  text-transform: none;
-
-  &:hover {
-    opacity: .75 !important;
-  }
-}
-*/
-
-.afg_hero_wrapper {
-  -webkit-align-content: center !important;
-  align-content: center !important;
-  -webkit-align-content: center;
-  align-content: center;
-  -webkit-flex-direction: column; /* Safari */
-  flex-direction:         column;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap; /* Safari */
-  flex-wrap:         wrap;
-
-  display: flex;
-  margin: 0;
-  min-height: 300px;
-  padding: 12px;
-
-  text-align: center;
-  height: 400px;
-
-  @media only screen and (min-width: $media-break-point-desktop-sm) {
-    padding: 24px;
-  }
-}
-
-
-
-.afg_hero_text_wrapper {
-  padding: 24px;
-}
-
-.afg_hero_text_background {
- background-color: rgba(0,0,0,.4);
-}
-
-.afg_hero_image_container {
- background-size: cover;
-}
-
-.afg_hero_title {
-  //  -webkit-align-self: center;
-  //  align-self: center;
-  font-size: 1.5em;
-  font-weight: 700;
-  line-height: 1.2em;
-
-  @media only screen and (min-width: $media-break-point-desktop-lg) {
-    font-size: 2em;
-  }
-}
-
-.afg_hero_title_multi {
-  padding: 24px 0 0 0;
-}
-
-
-.afg_hero_subtitle_1, .afg_hero_subtitle_2,
-.afg_hero_subtitle_3 {
-  color: #637381;
-  font-size: 1.2em;
-  font-weight: 400;
-  line-height: 1.2em;
-
-  @media only screen and (min-width: $media-break-point-desktop-lg) {
-    font-size: 1.5em;
-  }
-}
-
-.afg_hero_subtitle_1 {
-  padding: 24px 0 0 0;
-}
-
-.afg_hero_subtitle_2, .afg_hero_subtitle_3 {
-  padding: 12px 0 0 0;
-}
-
-
-
-
-
-// override body text
-p {
-
-  font-size: 1.2em !important;
-  @media only screen and (min-width: $media-break-point-desktop-sm) {
-
-  }
-  @media only screen and (min-width: $media-break-point-desktop-md) {
-  }
-  @media only screen and (min-width: $media-break-point-desktop-lg) {
-  }
-
-}
-
-
 // override main theme in case of long title
 .site-title {
   @media only screen and (max-width: $media-break-point-desktop-xs - 1px) {
@@ -146,8 +24,19 @@ p {
   }
 }
 
-// override main theme CSS to do full width
 
+// override body text
+p {
+  font-size: 1.2em !important;
+  @media only screen and (min-width: $media-break-point-desktop-sm) {
+  }
+  @media only screen and (min-width: $media-break-point-desktop-md) {
+  }
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+  }
+}
+
+// override main theme CSS to do full width
 .content-area {
   padding: 0 !important;
 }
@@ -158,13 +47,6 @@ p {
   width: 100%;
 }
 
-/*
-.iktsu-cta-post-link {
-  color: $todo-clean-general-body-color !important;
-  font-size: .95em;
-}
-*/
-
 // override text color
 body {
   color: $todo-clean-general-body-color;
@@ -174,22 +56,6 @@ body {
 .container-fluid {
   padding-top: 36px;
   padding-bottom: 36px;
-}
-
-
-
-
-
-
-/**************************
- **************************
-  Base classes
- **************************
- **************************/
-
-.afg-section {
-  padding-bottom: 48px;
-  padding-top: 48px;
 }
 
 
@@ -276,20 +142,28 @@ body {
  **************************
  **************************/
 
-.afg-btn {
-  &:link, &:hover, &:active, &:focus {
-    border-style: none;
-    border-radius: 5px;
-    border-style: none;
-    box-shadow: none;
-    color: inherit;
-    display: inline-block;
-    font-weight: 700;
-    outline: none !important;
-    padding: 24px;
-    text-decoration: none;
-    white-space: normal;
-  }
+
+
+.afg-btn, a.afg-btn {
+  border-style: none;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: none;
+  color: inherit;
+  display: inline-block;
+  font-weight: 700;
+  outline: none !important;
+  padding: 18px 30px;
+  text-decoration: none;
+  white-space: normal;
+}
+.afg-btn:active {
+}
+.afg-btn:hover {
+}
+.afg-btn:focus {
+}
+.afg-btn:link {
 }
 
 .afg-btn--long-text {
@@ -297,13 +171,130 @@ body {
   min-height: 64px;
 }
 
-.afg-btn-cta, .afg-btn-cta:focus, .afg-btn-cta:active, .afg-btn-cta:focus:active {
+.afg-btn-cta
+, .afg-btn-cta:focus
+, .afg-btn-cta:active
+, .afg-btn-cta:hover
+, .afg-btn-cta:link {
+  color: white;
+}
+
+
+.afg-btn-cta
+, .afg-btn-cta:focus
+, .afg-btn-cta:active
+, .afg-btn-cta:link {
   background-color: $pop-color;
 }
 
 .afg-btn-cta:hover {
   background-color: $pop-color--hover;
 }
+
+
+
+
+
+/**************************
+ **************************
+  Base Hero wrapper - use with customized php & custom fields per page
+ **************************
+ **************************/
+
+// base wrapper class
+.afg_hero_wrapper {
+  -webkit-align-content: center !important;
+  align-content: center !important;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-flex-direction: column; /* Safari */
+  flex-direction:         column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap; /* Safari */
+  flex-wrap:         wrap;
+
+  display: flex;
+  margin: 0;
+}
+
+
+.afg_hero_text_wrapper {
+  text-align: center;
+
+  height: 400px;
+  min-height: 300px;
+
+  @extend .afg-width-two-thirds-tablet;
+}
+
+.afg_hero_text_background {
+ background-color: rgba(0,0,0,.4);
+}
+
+.afg_hero_image_container {
+ background-size: cover;
+}
+
+.afg_hero_title {
+  //  -webkit-align-self: center;
+  //  align-self: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.2em;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    font-size: 2em;
+  }
+}
+
+.afg_hero_title_multi {
+  padding: 24px 0 0 0;
+}
+
+
+.afg_hero_subtitle_1, .afg_hero_subtitle_2,
+.afg_hero_subtitle_3 {
+  color: #637381;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.2em;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    font-size: 1.5em;
+  }
+}
+
+.afg_hero_subtitle_1 {
+  padding: 24px 0 0 0;
+}
+
+.afg_hero_subtitle_2, .afg_hero_subtitle_3 {
+  padding: 24px 0 0 0;
+}
+
+
+
+/**************************
+  Options to customize hero per page
+
+  Use this in custom field "Additional CSS classes"
+ **************************/
+
+// give hero a consistent height across pages
+.afg_hero_wrapper--default-height {
+  height: initial !important;
+  min-height: initial !important;
+}
+
+// Use this when adding more complex CTAs etc into hero banner. Instead of shoving it into hero, just make it part of standard page. And leave no gutter in hero so that the 2 are seamless.
+.afg_hero_wrapper--no-bottom-gutter {
+  padding-bottom: 0 !important;
+}
+
+
 
 
 
@@ -575,6 +566,11 @@ body {
   Page specific - home
  **************************
  **************************/
+
+
+// anything custom for home page hero banner
+.afg_hero_wrapper--home {
+}
 
 
 /**************************

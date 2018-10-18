@@ -75,6 +75,9 @@ $post_category  = get_theme_mod( 'post_category', true );
 		$afg_hero_subtitle_1 = get_post_meta($post->ID, 'afg_hero_subtitle_1', true);
 		$afg_hero_subtitle_2 = get_post_meta($post->ID, 'afg_hero_subtitle_2', true);
 		$afg_hero_subtitle_3 = get_post_meta($post->ID, 'afg_hero_subtitle_3', true);
+		$afg_hero_classes_ext = get_post_meta($post->ID, 'afg_hero_classes_ext', true);
+
+
 
 		// Deprecate get_post_meta method. Use Advance Custom Fields since it's a less brittle solution than copying/pasting
 		// a URL (user can instead pick a file).
@@ -113,6 +116,13 @@ $post_category  = get_theme_mod( 'post_category', true );
 			/* append shaded background color to text to make it pop from image */
 			$afg_hero_text_classes .= ' afg_hero_text_background';
 		endif;
+
+
+		if ($afg_hero_classes_ext) :
+			/* append class */
+			$afg_hero_text_classes .= ' ' . $afg_hero_classes_ext;
+		endif;
+
 
 
 		/* DISPLAY HERO */
