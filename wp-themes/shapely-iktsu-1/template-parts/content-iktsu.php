@@ -59,99 +59,99 @@ $post_category  = get_theme_mod( 'post_category', true );
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 
-		<!-- iktsu: removed	
+		<!-- afg: removed
 		<h2 class="post-title">
 			...
-		</h2>		
+		</h2>
 		-->
-		
 
-				
-		<?php  
-		/* IKTSU CUSTOM HERO BANNER */
-		$iktsu_hero_background_color = get_post_meta($post->ID, 'iktsu_hero_background_color', true);
-		$iktsu_hero_color = get_post_meta($post->ID, 'iktsu_hero_color', true);
-		$iktsu_hero_title = get_post_meta($post->ID, 'iktsu_hero_title', true);
-		$iktsu_hero_subtitle_1 = get_post_meta($post->ID, 'iktsu_hero_subtitle_1', true);
-		$iktsu_hero_subtitle_2 = get_post_meta($post->ID, 'iktsu_hero_subtitle_2', true);				
-		$iktsu_hero_subtitle_3 = get_post_meta($post->ID, 'iktsu_hero_subtitle_3', true);				
+
+
+		<?php
+		/* afg CUSTOM HERO BANNER */
+		$afg_hero_background_color = get_post_meta($post->ID, 'afg_hero_background_color', true);
+		$afg_hero_color = get_post_meta($post->ID, 'afg_hero_color', true);
+		$afg_hero_title = get_post_meta($post->ID, 'afg_hero_title', true);
+		$afg_hero_subtitle_1 = get_post_meta($post->ID, 'afg_hero_subtitle_1', true);
+		$afg_hero_subtitle_2 = get_post_meta($post->ID, 'afg_hero_subtitle_2', true);
+		$afg_hero_subtitle_3 = get_post_meta($post->ID, 'afg_hero_subtitle_3', true);
 
 		// Deprecate get_post_meta method. Use Advance Custom Fields since it's a less brittle solution than copying/pasting
 		// a URL (user can instead pick a file).
-		// $iktsu_hero_image_src = get_post_meta($post->ID, 'iktsu_hero_image_src', true);										
-		if( get_field('iktsu_hero_image_src') ):
-			$iktsu_hero_image_src = get_field('iktsu_hero_image_src');
+		// $afg_hero_image_src = get_post_meta($post->ID, 'afg_hero_image_src', true);
+		if( get_field('afg_hero_image_src') ):
+			$afg_hero_image_src = get_field('afg_hero_image_src');
 		endif;
-																				
+
 		/* SET HERO STYLE */
-		$iktsu_hero_style = '';		// init
-		
+		$afg_hero_style = '';		// init
+
 		// append bg color if set
-		if ($iktsu_hero_background_color != '') : 
-			$iktsu_hero_style .= 'background-color:' . $iktsu_hero_background_color . ';';
+		if ($afg_hero_background_color != '') :
+			$afg_hero_style .= 'background-color:' . $afg_hero_background_color . ';';
 		endif;
-		
+
 		// append text color if set
-		if ($iktsu_hero_color != '') : 			
-			$iktsu_hero_style .= 'color:' . $iktsu_hero_color . ';';
-		endif;		
-			
+		if ($afg_hero_color != '') :
+			$afg_hero_style .= 'color:' . $afg_hero_color . ';';
+		endif;
+
 		/* GET IMAGE SRC */
 		// base classes
-		$iktsu_hero_classes = 'iktsu_hero_wrapper';
-		$iktsu_hero_text_classes = 'iktsu_hero_text_wrapper';
-					
-		if ($iktsu_hero_image_src) :
+		$afg_hero_classes = 'afg_hero_wrapper';
+		$afg_hero_text_classes = 'afg_hero_text_wrapper';
+
+		if ($afg_hero_image_src) :
 			/* append dynamically the image url & position */
-			$iktsu_hero_style .= 'background-image: url(' . $iktsu_hero_image_src . ');';
-			$iktsu_hero_style .= 'background-position:' . get_field('iktsu_hero_background_position') . ';';
-			
+			$afg_hero_style .= 'background-image: url(' . $afg_hero_image_src . ');';
+			$afg_hero_style .= 'background-position:' . get_field('afg_hero_background_position') . ';';
+
 
 			/* append class to control background image css attrs - cover, etc */
-			$iktsu_hero_classes .= ' iktsu_hero_image_container';
-			
+			$afg_hero_classes .= ' afg_hero_image_container';
+
 			/* append shaded background color to text to make it pop from image */
-			$iktsu_hero_text_classes .= ' iktsu_hero_text_background';
+			$afg_hero_text_classes .= ' afg_hero_text_background';
 		endif;
 
 
-		/* DISPLAY HERO */	
-		if ($iktsu_hero_title || $iktsu_hero_image_src || $iktsu_hero_background_color) : 
-		?>
-					
-			<div class="<?php echo $iktsu_hero_classes;?>" style="<?php echo $iktsu_hero_style;?>" >
-				<div class="<?php echo $iktsu_hero_text_classes;?>">
-					
-					<div class="iktsu_hero_title"><?php echo $iktsu_hero_title; ?></div>
-				
-					<?php if ($iktsu_hero_subtitle_1) : ?>									
-						<div class="iktsu_hero_subtitle_1">
-							<?php echo $iktsu_hero_subtitle_1; ?>
-						</div>			
-						<?php endif; ?>
-	
-					<?php if ($iktsu_hero_subtitle_2) : ?>									
-						<div class="iktsu_hero_subtitle_2">
-							<?php echo $iktsu_hero_subtitle_2; ?>
-						</div>			
-						<?php endif; ?>
-	
-					<?php if ($iktsu_hero_subtitle_3) : ?>									
-						<div class="iktsu_hero_subtitle_3">
-							<?php echo $iktsu_hero_subtitle_3; ?>
-						</div>			
-						<?php endif; ?>			
-				</div>		
-			</div>			
-		<?php endif; 
-		/* END IKTSU CUSTOM HERO BANNER */
+		/* DISPLAY HERO */
+		if ($afg_hero_title || $afg_hero_image_src || $afg_hero_background_color) :
 		?>
 
+			<div class="<?php echo $afg_hero_classes;?>" style="<?php echo $afg_hero_style;?>" >
+				<div class="<?php echo $afg_hero_text_classes;?>">
+
+					<h1 class="afg_hero_title"><?php echo $afg_hero_title; ?></h1>
+
+					<?php if ($afg_hero_subtitle_1) : ?>
+						<div class="afg_hero_subtitle_1">
+							<?php echo $afg_hero_subtitle_1; ?>
+						</div>
+						<?php endif; ?>
+
+					<?php if ($afg_hero_subtitle_2) : ?>
+						<div class="afg_hero_subtitle_2">
+							<?php echo $afg_hero_subtitle_2; ?>
+						</div>
+						<?php endif; ?>
+
+					<?php if ($afg_hero_subtitle_3) : ?>
+						<div class="afg_hero_subtitle_3">
+							<?php echo $afg_hero_subtitle_3; ?>
+						</div>
+						<?php endif; ?>
+				</div>
+			</div>
+		<?php endif;
+		/* END afg CUSTOM HERO BANNER */
+		?>
 
 
 
 
-				
+
+
 		<div class="entry-meta">
 			<?php
 			shapely_posted_on_no_cat(); ?><!-- post-meta -->
