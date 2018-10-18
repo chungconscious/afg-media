@@ -60,8 +60,6 @@ body {
 
 
 
-
-
 /**************************
  **************************
   Base formats
@@ -69,7 +67,32 @@ body {
  **************************/
 
 .afg-gutter-bottom {
-  margin-bottom: 24px !important;
+  margin-bottom: 30px !important;
+}
+
+.afg-hero--cont {
+  // need to add color
+  background-color: white;
+  padding-top: 30px !important;
+}
+
+
+.afg-width-two-thirds-tablet {
+  padding-left: 18px;
+  padding-right: 18px;
+  width: 100%;
+
+  @media only screen and (min-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 67%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 58%;
+  }
 }
 
 
@@ -222,6 +245,7 @@ body {
 
 
 .afg_hero_text_wrapper {
+  // no padding top or bottm - assumed to be valign center via flex
   text-align: center;
 
   height: 400px;
@@ -258,20 +282,20 @@ body {
 .afg_hero_subtitle_1, .afg_hero_subtitle_2,
 .afg_hero_subtitle_3 {
   color: #637381;
-  font-size: 1.2em;
   font-weight: 400;
   line-height: 1.2em;
+}
 
+.afg_hero_subtitle_1 {
+  font-size: 1.2em;
+  padding: 24px 0 0 0;
   @media only screen and (min-width: $media-break-point-desktop-lg) {
     font-size: 1.5em;
   }
 }
 
-.afg_hero_subtitle_1 {
-  padding: 24px 0 0 0;
-}
-
 .afg_hero_subtitle_2, .afg_hero_subtitle_3 {
+  font-size: 1em;
   padding: 24px 0 0 0;
 }
 
@@ -284,13 +308,23 @@ body {
  **************************/
 
 // give hero a consistent height across pages
-.afg_hero_wrapper--default-height {
+.afg_hero_text_wrapper--default-height {
   height: initial !important;
   min-height: initial !important;
+
+  // default height, so pad top & bottom
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    font-size: 1.5em;
+    padding-bottom: 48px;
+    padding-top: 48px;
+  }
 }
 
 // Use this when adding more complex CTAs etc into hero banner. Instead of shoving it into hero, just make it part of standard page. And leave no gutter in hero so that the 2 are seamless.
-.afg_hero_wrapper--no-bottom-gutter {
+.afg_hero_text_wrapper--no-bottom-gutter {
   padding-bottom: 0 !important;
 }
 
@@ -561,6 +595,171 @@ body {
 
 
 
+
+/**************************
+ **************************
+  Form - general
+ **************************
+ **************************/
+
+.afg-form {
+  @extend .afg-width-two-thirds-tablet;
+  // tried to switch to flex but cannot use flex as this has multiple nested elements before getting down to child elems in form
+  //@extend .flex-row__valign_top-align_center--sm;
+
+  display: block;
+  text-align: center;
+}
+
+
+.afg-form--page-top {
+  @extend .afg-hero--cont;
+}
+
+
+/**************************
+  overrides for ninja
+ **************************/
+
+// without this, field containers use flex which causes
+// strange vertical alignments when including 2 fields on same line
+// eg on .afg-form---single-field-container @ 768+
+.nf-field .field-wrap {
+  display: inherit;
+  flex-wrap: inherit;
+}
+
+// hide msg
+.nf-form-fields-required {
+  display: none;
+}
+
+// added specific for ninja
+.afg-form-element-height-override {
+  height: 64px !important;
+}
+
+
+/**************************
+ **************************
+  my Form elements - can use in ninja form and general
+ **************************
+ **************************/
+
+// do not override INPUT class as it causes issues w. buttons in
+// ninja forms since those are inputs as well.
+.afg-input {
+  @extend .afg-form-element-height-override;
+
+  -webkit-appearance: none !important;
+  background-color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 0 1px #c4cdd5 !important;
+  -webkit-box-shadow: 0 0 0 1px #c4cdd5 !important;
+  color: #30373b !important;
+  font-family: inherit !important;
+  font-size: 1em !important;
+  margin: 0 15px 0 0 !important;
+  padding: 1em 1em !important;
+}
+
+
+// for fields & buttons
+.afg-form-field-container
+, .afg-form-submit-container {
+  display: block;
+  width: 100%;
+}
+
+// email field
+.afg-form-text-input {
+  @extend .afg-input;
+  width: 100% !important;
+}
+
+// button
+.afg-form-submit-cta {
+  @extend .afg-btn;
+  @extend .afg-btn-cta;
+
+  @extend .afg-form-element-height-override;
+
+  // fill screen in mobile
+  width: 100% !important;
+
+  // return to default btn settings
+  @media only screen and (min-width: 768px) {
+    width: initial;
+  }
+}
+
+
+.afg-form-submit-cta:active {
+  @extend .afg-btn:active !optional;
+  @extend .afg-btn-cta:active !optional;
+}
+.afg-form-submit-cta:hover {
+  @extend .afg-btn:hover !optional;
+  @extend .afg-btn-cta:hover !optional;
+}
+.afg-form-submit-cta:focus {
+  @extend .afg-btn:focus !optional;
+  @extend .afg-btn-cta:focus !optional;
+}
+.afg-form-submit-cta:link {
+  @extend .afg-btn:link !optional;
+  @extend .afg-btn-cta:link !optional;
+}
+
+.afg-form-email {
+  @extend .afg-form-text-input;
+}
+
+
+
+/**************************
+  single forms - only 1 field & button
+ **************************/
+
+// root container
+.afg-form---single-field-container {
+}
+
+.afg-form---single-field {
+}
+
+
+// in single field forms, get them to fit on one line
+.afg-form---single-field .afg-form-field-container
+, .afg-form---single-field .afg-form-submit-container
+{
+  @media only screen and (min-width: 768px) {
+    display: inline-block;
+    width: initial;
+  }
+}
+
+.afg-form---single-field .afg-form-field-container {
+  @media only screen and (min-width: 768px) {
+    /*
+    can't use this - takes up whole row
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    */
+    // assume button width is ~260px
+    margin-right: 12px;
+    width: 250px;
+  }
+}
+
+
+
+
+
+
+
 /**************************
  **************************
   Page specific - home
@@ -579,6 +778,7 @@ body {
 
 .afg-home-services {
   background-color: #f3f3f3;
+  padding: 0;
 }
 
 .afg-home-services > .afg-grid {
@@ -717,4 +917,21 @@ Stagger cards for look
 
   margin-bottom: .25em;
 }
+
+
+
+
+
+/**************************
+  forms on home page
+ **************************/
+
+
+.afg-form__no-risk {
+  color: #454f5b;
+  font-size: .75em;
+  padding-bottom: 48px;
+}
+
+
 
