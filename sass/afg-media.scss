@@ -56,7 +56,7 @@ section {
   font-weight: 700;
   margin-bottom: .5em;
 
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     font-size: 3em;
     margin-bottom: .85em;
   }
@@ -67,7 +67,7 @@ section {
   font-weight: 700;
   margin-bottom: .5em;
 
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     font-size: 2.25em;
     margin-bottom: .85em;
   }
@@ -132,7 +132,7 @@ section {
 .afg-grid {
   text-align: center;
 
-  @media only screen and (min-device-width: 512px) {
+  @media only screen and (min-width: 512px) {
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -153,17 +153,17 @@ section {
  **************************/
 
 .afg-grid-item--2-row {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     width: 50%;
   }
 }
 .afg-grid-item--3-row {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     width: 33%;
   }
 }
 .afg-grid-item--4-row {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     width: 25%;
   }
 }
@@ -176,21 +176,21 @@ section {
   Each position should have same total of L + R padding.
  **************************/
 .afg-grid-item--2-row.afg-grid-item-1 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 0;
     padding-right: 12px;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 0;
     padding-right: 18px;
   }
 }
 .afg-grid-item--2-row.afg-grid-item-2 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 12px;
     padding-right: 0;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 18px;
     padding-right: 0;
   }
@@ -200,31 +200,31 @@ section {
   Grid - 3 / row
  **************************/
 .afg-grid-item--3-row.afg-grid-item-1 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 0;
     padding-right: 12px;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 0;
     padding-right: 18px;
   }
 }
 .afg-grid-item--3-row.afg-grid-item-3 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 12px;
     padding-right: 0;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 18px;
     padding-right: 0;
   }
 }
 .afg-grid-item--3-row.afg-grid-item-2 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 6px;
     padding-right: 6px;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 9px;
     padding-right: 9px;
   }
@@ -234,31 +234,31 @@ section {
   Grid - 4 / row
  **************************/
 .afg-grid-item--4-row.afg-grid-item-1 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 0;
     padding-right: 12px;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 0;
     padding-right: 18px;
   }
 }
 .afg-grid-item--4-row.afg-grid-item-4 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 12px;
     padding-right: 0;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 18px;
     padding-right: 0;
   }
 }
 .afg-grid-item--4-row.afg-grid-item-2, .afg-grid-item--4-row.afg-grid-item-3 {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 6px;
     padding-right: 6px;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     padding-left: 9px;
     padding-right: 9px;
   }
@@ -286,24 +286,25 @@ section {
 }
 
 .afg-card__body {
+  line-height: 1.75em;
   margin-top: 24px !important;
   position: relative;
 }
 
 .afg-card__cta-container {
+  line-height: 1.5em;
   margin-top: 36px;
 }
 
 .afg-card__body, .afg-card__cta-container {
-  line-height: 1.75em;
   // default behavior for cards is to flip to row @ 768, and text becomes more crammed
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     font-size: .8em;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     font-size: .9em;
   }
-  @media only screen and (min-device-width: 1200px) {
+  @media only screen and (min-width: 1200px) {
     font-size: 1em;
   }
 }
@@ -394,13 +395,13 @@ section {
 }
 
 .afg-home-services > .afg-grid {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     padding-left: 0;
     padding-right: 0;
   }
   // override default afg-grid since these cards are tight on space.
   // turn off padding until there is a lot more room
-  @media only screen and (min-device-width: calc(768px + 60px)) {
+  @media only screen and (min-width: calc(768px + 60px)) {
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -432,7 +433,7 @@ section {
   margin-top: 72px;
   padding-left: 12px;
   padding-right: 12px;
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     //margin-top: 96px;
   }
 }
@@ -446,14 +447,14 @@ section {
 .afg-home-soc {
   background-color: #e4e5e9;
 
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     background-image: url("/wp-content/uploads/banners/md/world-map.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
     padding: 96px 0;
   }
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     background-image: url("/wp-content/uploads/banners/lg/world-map.png");
     background-size: 1200px;
     padding: 120px 0;
@@ -465,7 +466,7 @@ section {
   @extend .flex-row__valign_top-align_center;
   @extend .flex-base--max;
 
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
   }
 }
 
@@ -475,7 +476,7 @@ section {
 
   margin-top: 24px;
 
-  @media only screen and (min-device-width: 992px) {
+  @media only screen and (min-width: 992px) {
     margin-top: 72px;
   }
 }
@@ -485,12 +486,12 @@ section {
 Stagger cards for look
 */
 .afg-grid--home-why-us > .afg-grid-item-1 > .afg-card--why-us {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     margin-top: 24px;
   }
 }
 .afg-grid--home-why-us > .afg-grid-item-3 > .afg-card--why-us {
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     margin-top: 48px;
   }
 }
@@ -500,6 +501,8 @@ Stagger cards for look
 }
 
 .afg-heading--experience-number {
+  color: $pop-color--hover;
+
   margin-bottom: .25em;
 }
 
