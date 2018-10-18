@@ -312,6 +312,19 @@ $args = array(
 	'sections' => array( 'recommended-actions', 'pro' ), // array of sections to load
 );
 
+
+
+/*
+AFG styles
+*/
+function wpb_adding_styles() {
+	wp_enqueue_style( 'afg_css', get_template_directory_uri() . '/assets/css/afg-main.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'wpb_adding_styles' );
+
+
+
 new Epsilon_Framework( $args );
 
 /**
