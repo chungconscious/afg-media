@@ -4,11 +4,12 @@
  **************************
  **************************/
 
-
 section {
   padding-bottom: 48px;
   padding-top: 48px;
 }
+
+
 
 
 /**************************
@@ -17,10 +18,11 @@ section {
  **************************
  **************************/
 
-
 .afg-gutter-bottom {
   margin-bottom: 24px !important;
 }
+
+
 
 
 /**************************
@@ -42,11 +44,16 @@ section {
   text-align: center;
 }
 
+
+.afg-heading--1, .afg-heading--2, .afg-heading--3, .afg-heading--4 {
+  line-height: 1.5em;
+  padding: 0 24px;
+}
+
 .afg-heading--1 {
   color: $primary-color--hover; //#ffa61d; //$pop-color;
   font-size: 1.75em;
   font-weight: 700;
-  line-height: 1em;
   margin-bottom: .5em;
 
   @media only screen and (min-device-width: 992px) {
@@ -58,7 +65,6 @@ section {
 .afg-heading--2 {
   font-size: 1.5em;
   font-weight: 700;
-  line-height: 1em;
   margin-bottom: .5em;
 
   @media only screen and (min-device-width: 992px) {
@@ -69,10 +75,7 @@ section {
 
 .afg-heading--4 {
   font-weight: 700;
-  line-height: 1em;
 }
-
-
 
 .afg-stat-highlight {
   color: $primary-color--hover; //$pop-color;
@@ -93,19 +96,13 @@ section {
     border-style: none;
     border-radius: 5px;
     border-style: none;
-
     box-shadow: none;
-
     color: inherit;
     display: inline-block;
-
     font-weight: 700;
-
     outline: none !important;
     padding: 24px;
-
     text-decoration: none;
-
     white-space: normal;
   }
 }
@@ -114,10 +111,6 @@ section {
   max-width: 260px;
   min-height: 64px;
 }
-
-
-
-
 
 .afg-btn-cta, .afg-btn-cta:focus, .afg-btn-cta:active, .afg-btn-cta:focus:active {
   background-color: $pop-color;
@@ -147,21 +140,17 @@ section {
 
 // Base class: 1 / row in mobile
 .afg-grid-item {
-
+  margin-top: 48px;
   padding-left: 5%;
   padding-right: 5%;
   width: 100%;
-
-  @media only screen and (min-device-width: 512px) {
-  }
 }
 
 
 /**************************
   Grid - numbers per row
+  Specific # / row - define width when > mobile
  **************************/
-// Specific # / row - define width when > mobile
-
 
 .afg-grid-item--2-row {
   @media only screen and (min-device-width: 768px) {
@@ -181,14 +170,10 @@ section {
 
 
 
-
-/*
- Define specific left & right padding based on placement to line up with edges.
- Each position should have same total of L + R padding.
- */
-
 /**************************
   Grid - 2 / row
+  Define specific left & right padding based on placement to line up with edges.
+  Each position should have same total of L + R padding.
  **************************/
 .afg-grid-item--2-row.afg-grid-item-1 {
   @media only screen and (min-device-width: 768px) {
@@ -291,55 +276,27 @@ section {
  **************************
  **************************/
 
-.afg-card--icon-lead {
+.afg-card {
   background-color: white;
   border-radius: 5px;
   border-style: none;
   box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
   color: $color-standard;
-  font-size: 1.125em;
-
-  margin-top: 48px;
-  padding: 48px;
   text-align: center;
-}
-
-
-
-
-.afg-card--title-lead {
-  //@extend .flex-column__valign_top-align_center;
-
-  background-color: white;
-  border-radius: 5px;
-  border-style: none;
-  box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
-  color: $color-standard;
-  font-size: 1.125em;
-
-  margin-top: 48px;
-}
-
-
-// Padding & margin below account for expected image 64x64
-.afg-card__title {
-  background-color: #b6cfe4; //$primary-color-dark; //#e9ecef;
-  border-radius: 5px 5px 0 0;
-  border-style: none;
-  color: $color-standard;
-  font-weight: bold;
-  padding: 24px 24px 48px 24px;
-  text-align: center;
-  width: 100%;
 }
 
 .afg-card__body {
   margin-top: 24px !important;
-  padding: 24px;
   position: relative;
+}
 
+.afg-card__cta-container {
+  margin-top: 36px;
+}
+
+.afg-card__body, .afg-card__cta-container {
+  line-height: 1.75em;
   // default behavior for cards is to flip to row @ 768, and text becomes more crammed
-
   @media only screen and (min-device-width: 768px) {
     font-size: .8em;
   }
@@ -349,11 +306,62 @@ section {
   @media only screen and (min-device-width: 1200px) {
     font-size: 1em;
   }
-
 }
 
 
 
+
+.afg-card__img {
+  height: 64px;
+  width: 64px;
+}
+
+.afg-card__img-2 {
+  margin-left: 24px;
+}
+
+
+
+
+/**************************
+ **************************
+  Icons at top - no bg colored background
+ **************************
+ **************************/
+
+.afg-card--icon-lead {
+  padding: 24px;
+}
+
+.afg-card--icon-lead > .afg-card__img-wrapper {
+  margin-bottom: 24px;
+}
+
+
+
+/**************************
+ **************************
+  title @ top - with colored background & image straddling area between title and body
+ **************************
+ **************************/
+
+// in title leads, top section is colored and thus card container needs 0 padding
+.afg-card--title-lead {
+}
+.afg-card--title-lead > .afg-card__body {
+  padding: 24px;
+}
+// Padding & margin below account for expected image 64x64
+.afg-card--title-lead__title {
+  background-color: #b6cfe4; //$primary-color-dark; //#e9ecef;
+  border-radius: 5px 5px 0 0;
+  border-style: none;
+  color: $color-standard;
+  font-weight: bold;
+  padding: 24px 24px 48px 24px;
+  text-align: center;
+  width: 100%;
+}
 
 .afg-card--title-lead > .afg-card__body > .afg-card__img-wrapper {
   height: 64px;
@@ -365,23 +373,6 @@ section {
   top: -60px;
   width: 64px;
 }
-
-.afg-card--icon-lead > .afg-card__img-wrapper {
-  margin-bottom: 24px;
-}
-
-.afg-card__img {
-  height: 64px;
-  width: 64px;
-}
-
-
-.afg-card__cta-container {
-  margin-top: 36px;
-}
-
-
-
 
 
 
@@ -399,7 +390,23 @@ section {
  **************************/
 
 .afg-home-services {
-  background-color: $background-color;
+  background-color: #f3f3f3;
+}
+
+.afg-home-services > .afg-grid {
+  @media only screen and (min-device-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  // override default afg-grid since these cards are tight on space.
+  // turn off padding until there is a lot more room
+  @media only screen and (min-device-width: calc(768px + 60px)) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.afg-card--service-type {
 }
 
 .afg-grid--home-services {
@@ -414,44 +421,82 @@ section {
 }
 
 
+.afg-service-fact {
+  background-color: #fdfdfd;
+  border-color: #ccc;
+  border-width: 3px;
+  font-style: italic;
+  margin-bottom: 72px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 72px;
+  padding-left: 12px;
+  padding-right: 12px;
+  @media only screen and (min-device-width: 768px) {
+    //margin-top: 96px;
+  }
+}
+
 
 
 /**************************
   Experience section
  **************************/
 
-
-
-.afg-grid--home-experience {
-  @extend .flex-row__valign_top-align_center;
-  @extend .flex-base--max;
-
-  margin-top: 48px !important;
-}
-
-.afg-grid--home-why-us {
-  @extend .flex-row__valign_top-align_center;
-  @extend .flex-base--max;
-}
-
-.afg-card--why-us > .afg-card__body {
-  text-align: left;
-}
-
-
 .afg-home-soc {
-  background-color: #d7d7db;
+  background-color: #e4e5e9;
 
   @media only screen and (min-device-width: 768px) {
     background-image: url("/wp-content/uploads/banners/md/world-map.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
+    padding: 96px 0;
   }
   @media only screen and (min-device-width: 992px) {
     background-image: url("/wp-content/uploads/banners/lg/world-map.png");
     background-size: 1200px;
+    padding: 120px 0;
   }
+}
+
+
+.afg-grid--home-experience {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  @media only screen and (min-device-width: 768px) {
+  }
+}
+
+.afg-grid--home-why-us {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  margin-top: 24px;
+
+  @media only screen and (min-device-width: 992px) {
+    margin-top: 72px;
+  }
+}
+
+
+/*
+Stagger cards for look
+*/
+.afg-grid--home-why-us > .afg-grid-item-1 > .afg-card--why-us {
+  @media only screen and (min-device-width: 768px) {
+    margin-top: 24px;
+  }
+}
+.afg-grid--home-why-us > .afg-grid-item-3 > .afg-card--why-us {
+  @media only screen and (min-device-width: 768px) {
+    margin-top: 48px;
+  }
+}
+
+.afg-card--why-us > .afg-card__body {
+  text-align: left;
 }
 
 .afg-heading--experience-number {
