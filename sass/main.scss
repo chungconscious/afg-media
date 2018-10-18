@@ -233,13 +233,6 @@ $page-padding-for-wf-nav: 92px;
 // **********************************************************************
 
 
-@import "angular";
-@import "bootstrap";
-@import "font-awesome";
-@import "mmenu";
-@import "ngDialog";
-
-
 
 // **********************************************************************
 // **********************************************************************
@@ -249,49 +242,12 @@ $page-padding-for-wf-nav: 92px;
 // **********************************************************************
 // **********************************************************************
 
-@import "common";
-@import "common.animate";
 @import "common.flex";
-@import "common.banner";
-@import "common.external";
-@import "common.image";
-@import "common.wf";
 
-@import "flip";
-
-
-@import "auth";
-
-@import "header";
-@import "help";
-
-@import "account.prepaid";
-@import "account.home";
-@import "account.orders";
-@import "account.onboarding";
-
-@import "checkout";
-
-@import "contacts.forms";
-@import "content.about";
-@import "core.routing";
-
-@import "editor";
-@import "gallery";
-
-@import "impact";     //has dependencies from page-content
-@import "image_uploader";
-
-@import "landings";
-
-@import "postcard-6x4-container";
-@import "postcard-6x4";
-@import "postcard-6x4-edit";
-@import "postcard-wf";
-@import "page-content";
-@import "sorg";
 
 @import "style";
 
 
-@import "social"; // has dependencies ON page-content
+
+
+@import "afg-media";

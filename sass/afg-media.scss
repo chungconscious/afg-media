@@ -18,21 +18,16 @@ Page: hide author and page added date info
 }
 
 
+/*
 .iktsu-bg-light-grey {
   background-color: #f1f1f1;
 
 }
 
 
-
-
-
 .iktsu-cta-default {
   background-color: $pop-color !important;
   border: 2px solid $pop-color !important;
-    /*
-    none !important;
-    */
   border-radius: 5px !important;
   color: $color-standard !important;
   font-size: 1.9rem !important;
@@ -45,9 +40,9 @@ Page: hide author and page added date info
     opacity: .75 !important;
   }
 }
+*/
 
-
-.iktsu_hero_wrapper {
+.afg_hero_wrapper {
   -webkit-align-content: center !important;
   align-content: center !important;
   -webkit-align-content: center;
@@ -62,7 +57,7 @@ Page: hide author and page added date info
   flex-wrap:         wrap;
 
   display: flex;
-  margin: 0 0 48px 0;
+  margin: 0;
   min-height: 300px;
   padding: 12px;
 
@@ -76,44 +71,52 @@ Page: hide author and page added date info
 
 
 
-.iktsu_hero_text_wrapper {
+.afg_hero_text_wrapper {
   padding: 24px;
 }
 
-.iktsu_hero_text_background {
+.afg_hero_text_background {
  background-color: rgba(0,0,0,.4);
 }
 
-.iktsu_hero_image_container {
+.afg_hero_image_container {
  background-size: cover;
 }
 
-.iktsu_hero_title {
+.afg_hero_title {
   //  -webkit-align-self: center;
   //  align-self: center;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 700;
-  line-height: 1.3em;
-  @media only screen and (min-width: $media-break-point-desktop-sm) {
-    font-size: 3em;
+  line-height: 1.2em;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    font-size: 2em;
   }
 }
 
-.iktsu_hero_title_multi {
+.afg_hero_title_multi {
   padding: 24px 0 0 0;
 }
 
-.iktsu_hero_subtitle_1, .iktsu_hero_subtitle_2,
-.iktsu_hero_subtitle_3 {
-  font-size: 1.3em;
-  font-weight: 500;
-  line-height: 1.3em;
+
+.afg_hero_subtitle_1, .afg_hero_subtitle_2,
+.afg_hero_subtitle_3 {
+  color: #637381;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.2em;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    font-size: 1.5em;
+  }
 }
-.iktsu_hero_subtitle_1 {
+
+.afg_hero_subtitle_1 {
   padding: 24px 0 0 0;
 }
 
-.iktsu_hero_subtitle_2, .iktsu_hero_subtitle_3 {
+.afg_hero_subtitle_2, .afg_hero_subtitle_3 {
   padding: 12px 0 0 0;
 }
 
@@ -155,12 +158,12 @@ p {
   width: 100%;
 }
 
-
+/*
 .iktsu-cta-post-link {
   color: $todo-clean-general-body-color !important;
   font-size: .95em;
 }
-
+*/
 
 // override text color
 body {
@@ -184,7 +187,7 @@ body {
  **************************
  **************************/
 
-section {
+.afg-section {
   padding-bottom: 48px;
   padding-top: 48px;
 }
