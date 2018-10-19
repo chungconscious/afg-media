@@ -659,6 +659,28 @@ body {
   overrides for ninja
  **************************/
 
+
+// get rid of spinner so that content below the form doesn't jump up after form load
+.nf-loading-spinner {
+  margin: 12px auto !important;
+}
+
+.nf-error-msg, .nf-error-field-errors {
+  color: $error-color !important;
+}
+
+// give spacing to content below form
+.nf-after-form-content .nf-error-msg {
+  margin-bottom: 48px !important;
+}
+
+.nf-after-field .nf-error-msg {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+
+
 // without this, field containers use flex which causes
 // strange vertical alignments when including 2 fields on same line
 // eg on .afg-form---single-field-container @ 768+
@@ -728,9 +750,23 @@ body {
 
   // return to default btn settings
   @media only screen and (min-width: 768px) {
-    width: initial;
+    // todo: unsure what this does - either remove, change, or set to important?
+    // width: initial;
   }
 }
+
+.afg-form-submit-cta.afg-form-submit-cta--tablet-245 {
+  /*
+  work around for ninja form so that on submit, the potential change in text
+  length does not change button width & other elements around it
+  */
+  @media only screen and (min-width: 768px) {
+    width: 245px !important;
+  }
+}
+
+
+
 
 
 .afg-form-submit-cta:active {
@@ -773,7 +809,8 @@ body {
 , .afg-form---single-field .afg-form-submit-container
 {
   @media only screen and (min-width: 768px) {
-    display: inline-block;
+    display: inline-block; //fallback just in case
+    display: inline-grid;
     width: initial;
   }
 }
