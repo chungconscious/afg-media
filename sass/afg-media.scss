@@ -1082,11 +1082,14 @@ Stagger cards for look
   cursor: pointer;
 
   display: inline-block;
+  font-size: 24px;
   height: 36px;
 
   overflow: hidden;
 
   padding: 8px;
+  position: relative;
+
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -1095,7 +1098,9 @@ Stagger cards for look
   width: 36px;
 }
 
-.afg-slider__controls>button:hover {
+.afg-slider__controls>button:focus
+, .afg-slider__controls>button:hover
+, .afg-slider__controls>button:active  {
   background-color: rgba(255, 255, 255, .4);
 }
 
@@ -1104,6 +1109,22 @@ Stagger cards for look
 }
 
 
+.fa-afg-slider-control {
+  position: absolute;
+  top: 4px;
+  width: 16px;
+  height: 24px;
+  line-height: 24px;
+}
+.fa-afg-slider--left {
+  left: 8px;
+  right: initial;
+}
+
+.fa-afg-slider--right {
+  left: initial;
+  right: 8px;
+}
 
 
 /**************************
