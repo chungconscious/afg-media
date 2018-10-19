@@ -1,0 +1,237 @@
+/**************************
+ **************************
+  Page specific - home
+ **************************
+ **************************/
+
+// anything custom for home page hero banner
+.afg_hero_wrapper--home {
+}
+
+
+/**************************
+  Services section
+ **************************/
+
+.afg-home-services {
+  background-color: #f3f3f3;
+}
+
+.afg-home-services > .afg-grid {
+  // override default afg-grid since these cards are tight on space.
+  // turn off padding until there is a lot more room
+
+  @media only screen and (max-width: calc(768px + 60%)) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.afg-card--service-type {
+}
+
+.afg-grid--home-services {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  text-align: left;
+}
+
+.afg-grid--home-services__title {
+  font-weight: 700;
+}
+
+.afg-service-fact {
+  background-color: #fdfdfd;
+  border-color: #ccc;
+  border-width: 3px;
+  font-style: italic;
+  margin-bottom: 60px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 48px;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 0;
+    margin-top: 72px;
+  }
+}
+
+
+// reset margin - section already has bottom padding
+.afg-service-fact .afg-grid-item-3 .afg-service-fact {
+  margin-bottom: 0;
+}
+
+
+
+
+/**************************
+  Experience section
+ **************************/
+
+.afg-home-soc {
+  background-color: #e4e5e9;
+
+  @media only screen and (min-width: 768px) {
+    background-image: url("/wp-content/uploads/media/banners/md/world-map.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/world-map.png");
+    background-size: 1200px;
+  }
+}
+
+
+.afg-grid--home-experience {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  @media only screen and (min-width: 768px) {
+  }
+}
+
+.afg-grid--home-experience > .afg-grid-item--3-row {
+  /* switch to smaller width so that the numbers don't line up directly
+  over the cards - but don't do this @ 768 bc long text will flow to 2nd line */
+
+  margin-top: 24px;
+  @media only screen and (min-width: 992px) {
+    width: 25%;
+  }
+}
+
+
+.afg-grid--home-why-us {
+  @extend .flex-row__valign_top-align_center;
+  @extend .flex-base--max;
+
+  margin-top: 24px;
+
+  @media only screen and (min-width: 992px) {
+    margin-top: 72px;
+  }
+}
+
+
+/*
+Stagger cards for look
+*/
+.afg-grid--home-why-us > .afg-grid-item-1 > .afg-card--why-us {
+  @media only screen and (min-width: 768px) {
+    margin-top: 72px;
+  }
+}
+.afg-grid--home-why-us > .afg-grid-item-3 > .afg-card--why-us {
+  @media only screen and (min-width: 768px) {
+    margin-top: 96px;
+  }
+}
+
+// ensure that customers card is first or 'top'
+.afg-grid--home-why-us > .afg-grid-item-1 {
+  order: 2;
+  @media only screen and (min-width: 768px) {
+    order: 1;
+  }
+}
+.afg-grid--home-why-us > .afg-grid-item-2 {
+  order: 1;
+  @media only screen and (min-width: 768px) {
+    order: 2;
+  }
+}
+.afg-grid--home-why-us > .afg-grid-item-3 {
+  order: 3;
+}
+
+
+.afg-card--why-us > .afg-card__body {
+  text-align: left;
+}
+
+.afg-heading--experience-number {
+  color: $pop-color--hover;
+
+  margin-bottom: .25em;
+}
+
+
+
+
+
+/**************************
+  forms on home page
+ **************************/
+
+
+.afg-form__no-risk {
+  color: #454f5b;
+  font-size: .75em;
+  padding-bottom: 48px;
+}
+
+
+
+
+
+/**************************
+ image slider - industries
+ **************************/
+
+.afg-slider__img--hotels {
+  background-image: url("/wp-content/uploads/media/banners/sm/hotels.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/hotels.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/hotels.jpg");
+  }
+}
+
+.afg-slider__img--scuba {
+  background-image: url("/wp-content/uploads/media/banners/sm/snorkeling-and-scuba-dive-shops.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/snorkeling-and-scuba-dive-shops.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/snorkeling-and-scuba-dive-shops.jpg");
+  }
+}
+
+.afg-slider__img--trekking {
+  background-image: url("/wp-content/uploads/media/banners/sm/trekking-and-hiking-tours.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/trekking-and-hiking-tours.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/trekking-and-hiking-tours.jpg");
+  }
+}
+
+.afg-slider__img--hot-air-balloons {
+  background-image: url("/wp-content/uploads/media/banners/sm/hot-air-balloon-tours.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/hot-air-balloon-tours.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/hot-air-balloon-tours.jpg");
+  }
+}
+
+
+
+.afg-slider__img--jeep-tours {
+  background-image: url("/wp-content/uploads/media/banners/sm/jeep-tours.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/jeep-tours.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/jeep-tours.jpg");
+  }
+}
