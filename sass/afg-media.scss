@@ -1054,7 +1054,7 @@ Stagger cards for look
 
 .afg-slider__controls {
   position: absolute;
-  bottom: 0px;  // set to 0 but balances out with transforms on the individual buttons
+  bottom: 18px;
   right: 18px;
   z-index: 1;
 
@@ -1097,12 +1097,6 @@ Stagger cards for look
 
 .afg-slider__controls>button:hover {
   background-color: rgba(255, 255, 255, .4);
-}
-
-.afg-slider__control-left, .afg-slider__control-right {
-  transform: translate(0%,-50%);
-  -ms-transform: translate(-0%,-50%);
-  margin-top: 30px; // this compensates for transform which rotates them upwards
 }
 
 .afg-slider__control-right {
