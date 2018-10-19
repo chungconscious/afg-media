@@ -24,7 +24,6 @@ $todo-clean-general-body-color: #555;
   }
 }
 
-
 // override body text
 p {
   font-size: 1.2em !important;
@@ -52,6 +51,7 @@ body {
   color: $todo-clean-general-body-color;
 }
 
+
 // override container full to add padding
 .container-fluid {
   padding-top: 36px;
@@ -66,6 +66,18 @@ body {
  **************************
  **************************/
 
+
+.afg-section {
+  padding-bottom: 60px;
+  padding-top: 60px;
+
+  @media only screen and (min-width: 992px) {
+    padding-bottom: 96px;
+    padding-top: 96px;
+  }
+}
+
+
 .afg-gutter-bottom {
   margin-bottom: 30px !important;
 }
@@ -77,7 +89,7 @@ body {
 }
 
 
-.afg-width-two-thirds-tablet {
+.afg-width-two-thirds-tablet--centered {
   padding-left: 18px;
   padding-right: 18px;
   width: 100%;
@@ -251,7 +263,7 @@ body {
   height: 400px;
   min-height: 300px;
 
-  @extend .afg-width-two-thirds-tablet;
+  @extend .afg-width-two-thirds-tablet--centered;
 }
 
 .afg_hero_text_background {
@@ -603,7 +615,7 @@ body {
  **************************/
 
 .afg-form {
-  @extend .afg-width-two-thirds-tablet;
+  @extend .afg-width-two-thirds-tablet--centered;
   // tried to switch to flex but cannot use flex as this has multiple nested elements before getting down to child elems in form
   //@extend .flex-row__valign_top-align_center--sm;
 
@@ -778,7 +790,6 @@ body {
 
 .afg-home-services {
   background-color: #f3f3f3;
-  padding: 0;
 }
 
 .afg-home-services > .afg-grid {
@@ -805,22 +816,30 @@ body {
   font-weight: 700;
 }
 
-
 .afg-service-fact {
   background-color: #fdfdfd;
   border-color: #ccc;
   border-width: 3px;
   font-style: italic;
-  margin-bottom: 72px;
+  margin-bottom: 60px;
   margin-left: 12px;
   margin-right: 12px;
-  margin-top: 72px;
+  margin-top: 48px;
   padding-left: 12px;
   padding-right: 12px;
+
   @media only screen and (min-width: 768px) {
-    //margin-top: 96px;
+    margin-bottom: 0;
+    margin-top: 72px;
   }
 }
+
+
+// reset margin - section already has bottom padding
+.afg-service-fact .afg-grid-item-3 .afg-service-fact {
+  margin-bottom: 0;
+}
+
 
 
 
@@ -836,12 +855,10 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 96px 0;
   }
   @media only screen and (min-width: 992px) {
     background-image: url("/wp-content/uploads/media/banners/lg/world-map.png");
     background-size: 1200px;
-    padding: 120px 0;
   }
 }
 
@@ -858,6 +875,7 @@ body {
   /* switch to smaller width so that the numbers don't line up directly
   over the cards - but don't do this @ 768 bc long text will flow to 2nd line */
 
+  margin-top: 24px;
   @media only screen and (min-width: 992px) {
     width: 25%;
   }
@@ -935,3 +953,185 @@ Stagger cards for look
 
 
 
+
+/**************************
+ **************************
+ Base image slider carousel
+ **************************
+ **************************/
+
+// keep height & width in sync
+.afg-slider
+, .afg-slider__img-container
+, .afg-slider__img
+{
+  height: 400px;
+  width: 100%;
+
+  @media only screen and (min-width: 1200px) {
+    height: 555px;
+  }
+  @media only screen and (min-width: $media-break-point-desktop-max) {
+    width: $media-break-point-desktop-max;
+  }
+}
+
+
+// outer container
+.afg-slider {
+  display: block;
+  position: relative;
+}
+
+// img container
+.afg-slider__img-container {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+// the actual image - each will have diff class
+.afg-slider__img {
+  display: block;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+/**************************
+ slider controls & caption @ bottom of carousel
+ **************************/
+
+.afg-img-slide-caption {
+  bottom: 18px;
+  color: white;
+  left: 18px;
+  position: absolute;
+  width: 65%;
+  z-index: 1;
+
+  @media only screen and (min-width: 768px) {
+    bottom: 36px;
+    left: 36px;
+  }
+  @media only screen and (min-width: 992px) {
+    left: 60px;
+  }
+  @media only screen and (min-width: 1200px) {
+    left: 72px;
+  }
+}
+
+.afg-slider__controls {
+  position: absolute;
+  bottom: 0px;  // set to 0 but balances out with transforms on the individual buttons
+  right: 18px;
+  z-index: 1;
+
+  @media only screen and (min-width: 768px) {
+    bottom: 18px;
+    right: 36px;
+  }
+  @media only screen and (min-width: 992px) {
+    right: 60px;
+  }
+  @media only screen and (min-width: 1200px) {
+    right: 72px;
+  }
+}
+
+.afg-slider__controls>button  {
+  background-color: rgba(0, 0, 0, .4);
+
+  border-color: white;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+
+  color: white !important;
+  cursor: pointer;
+
+  display: inline-block;
+  height: 36px;
+
+  overflow: hidden;
+
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+
+  white-space: nowrap;
+  width: 36px;
+}
+
+.afg-slider__controls>button:hover {
+  background-color: rgba(255, 255, 255, .4);
+}
+
+.afg-slider__control-left, .afg-slider__control-right {
+  transform: translate(0%,-50%);
+  -ms-transform: translate(-0%,-50%);
+  margin-top: 30px; // this compensates for transform which rotates them upwards
+}
+
+.afg-slider__control-right {
+  margin-left: 6px;
+}
+
+
+
+
+
+/**************************
+ specific images
+ **************************/
+
+.afg-slider__img--hotels {
+  background-image: url("/wp-content/uploads/media/banners/sm/hotels.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/hotels.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/hotels.jpg");
+  }
+}
+
+.afg-slider__img--scuba {
+  background-image: url("/wp-content/uploads/media/banners/sm/snorkeling-and-scuba-dive-shops.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/snorkeling-and-scuba-dive-shops.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/snorkeling-and-scuba-dive-shops.jpg");
+  }
+}
+
+.afg-slider__img--trekking {
+  background-image: url("/wp-content/uploads/media/banners/sm/trekking-and-hiking-tours.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/trekking-and-hiking-tours.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/trekking-and-hiking-tours.jpg");
+  }
+}
+
+.afg-slider__img--hot-air-balloons {
+  background-image: url("/wp-content/uploads/media/banners/sm/hot-air-balloon-tours.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/hot-air-balloon-tours.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/hot-air-balloon-tours.jpg");
+  }
+}
