@@ -794,9 +794,13 @@ body {
  **************************
  **************************/
 
-// default behavior - occupy full width of parent container
+.afg-img-wrapper {
+  display: block;
+  position: relative;
+  text-align: center;
+}
 .afg-img {
-  width: 100%;
+  width: auto; // based on img own size
 }
 .afg-img--box-shadow {
   box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
