@@ -35,8 +35,8 @@ $border-color--light: #dcdce0; //#eee;
 $color-standard: rgba(0,0,0,.8);
 
 // Contrast pop color to iktsu blues
-$pop-color: #F5BC64;
-$pop-color--hover: #F0B04B;
+$pop-color: #f7ab59; //#F5BC64;
+$pop-color--hover: #f7ab59de; //#F0B04B;
 
 
 // Pricinpal iktsu light blue
@@ -121,7 +121,7 @@ $media-break-point-desktop-lg: 1200px;
 
 // Use this as max-width on content pages to focus to center of screen
 // while still allowing hero images to be in their own section that occupies 100% width
-$media-break-point-desktop-max: 1400px;
+$media-break-point-desktop-max: 1600px;
 
 $image-max-width: 1800px;
 

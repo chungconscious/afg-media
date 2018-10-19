@@ -24,6 +24,22 @@ $todo-clean-general-body-color: #555;
   }
 }
 
+// remove margin
+article.post-content {
+  margin-bottom: 0 !important;
+}
+#main #primary {
+  margin-bottom: 0 !important;
+}
+
+#main {
+  // leave margin & width - do not go full width screen
+  //  margin: 0;
+  padding: 0;
+  //  width: 100%;
+}
+
+
 // override body text
 p {
   font-size: 1.2em !important;
@@ -40,17 +56,20 @@ p {
   padding: 0 !important;
 }
 
-#main {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
 
 // override text color
 body {
   color: $todo-clean-general-body-color;
 }
 
+//bootstrap override
+.container {
+  width: 100% !important;
+
+  @media only screen and (min-width: $media-break-point-desktop-max) {
+    width: $media-break-point-desktop-max !important;
+  }
+}
 
 // override container full to add padding
 .container-fluid {
@@ -956,7 +975,7 @@ Stagger cards for look
 
 /**************************
  **************************
- Base image slider carousel
+ Base slider
  **************************
  **************************/
 
@@ -1031,6 +1050,8 @@ Stagger cards for look
   }
 }
 
+
+
 .afg-slider__controls {
   position: absolute;
   bottom: 0px;  // set to 0 but balances out with transforms on the individual buttons
@@ -1087,7 +1108,6 @@ Stagger cards for look
 .afg-slider__control-right {
   margin-left: 6px;
 }
-
 
 
 
