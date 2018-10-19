@@ -96,6 +96,13 @@ body {
   }
 }
 
+// use this when section is at very top of page - otherwise, the padding is too much
+.afg-section.afg-section--top-of-page {
+  @media only screen and (max-width: $media-break-point-desktop-md - 1px) {
+    padding-top: 24px;
+  }
+}
+
 
 .afg-gutter-bottom {
   margin-bottom: 30px !important;
