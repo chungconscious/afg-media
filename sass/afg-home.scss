@@ -235,3 +235,44 @@ Stagger cards for look
     background-image: url("/wp-content/uploads/media/banners/lg/jeep-tours.jpg");
   }
 }
+
+
+
+
+/**************************
+  Upcoming section
+ **************************/
+
+.afg-home-upcoming {
+  background-color: white;
+}
+
+
+
+.afg-img-wrapper--home-upcoming-map {
+  margin-top: 48px;
+}
+
+.afg-home-upcoming__locations-map {
+  @extend .afg-img--box-shadow;
+  @extend .afg-img--border-radius;
+}
+
+
+.afg-home-upcoming__body {
+  margin-top: 48px;
+
+}
+
+.afg-home-upcoming__locations {
+  list-style: none;
+  margin: 24px 0 0 0;
+  text-align: center;
+}
+
+.afg-home-upcoming__locations li {
+
+}
+.afg-home-upcoming__cta-msg {
+  margin: 24px 0 0 0;
+}

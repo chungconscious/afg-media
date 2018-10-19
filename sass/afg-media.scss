@@ -42,7 +42,7 @@ article.post-content {
 
 // override body text
 p {
-  font-size: 1.2em !important;
+  line-height: 1.5;
   @media only screen and (min-width: $media-break-point-desktop-sm) {
   }
   @media only screen and (min-width: $media-break-point-desktop-md) {
@@ -785,6 +785,25 @@ body {
   }
 }
 
+
+
+
+/**************************
+ **************************
+ Base images
+ **************************
+ **************************/
+
+// default behavior - occupy full width of parent container
+.afg-img {
+  width: 100%;
+}
+.afg-img--box-shadow {
+  box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
+}
+.afg-img--border-radius {
+  border-radius: 25px;
+}
 
 
 
