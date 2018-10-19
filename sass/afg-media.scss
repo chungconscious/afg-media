@@ -1170,3 +1170,15 @@ Stagger cards for look
     background-image: url("/wp-content/uploads/media/banners/lg/hot-air-balloon-tours.jpg");
   }
 }
+
+
+
+.afg-slider__img--jeep-tours {
+  background-image: url("/wp-content/uploads/media/banners/sm/jeep-tours.jpg");
+  @media only screen and (min-width: 512px) {
+    background-image: url("/wp-content/uploads/media/banners/md/jeep-tours.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("/wp-content/uploads/media/banners/lg/jeep-tours.jpg");
+  }
+}
