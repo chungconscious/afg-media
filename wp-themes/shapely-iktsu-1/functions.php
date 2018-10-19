@@ -325,6 +325,13 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_styles' );
 
 
 
+// disable WP editor from adding <p> tags
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
+
+
+
 new Epsilon_Framework( $args );
 
 /**
