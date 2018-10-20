@@ -138,6 +138,21 @@ body {
 
 
 
+/*
+scratch - can reuse for other list or ul
+.afg-home-upcoming__locations {
+  list-style: none;
+  margin: 24px 0 0 0;
+  text-align: center;
+}
+
+.afg-home-upcoming__locations li {
+}
+*/
+
+
+
+
 /**************************
  **************************
   Base fonts
@@ -370,6 +385,33 @@ body {
 
 
 
+
+.afg-table {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.afg-table--xs {
+  max-width: 320px;
+}
+
+.afg-column {
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+
+.afg-row {
+  margin: 12px 0;
+}
+.afg-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
 
@@ -855,7 +897,7 @@ body {
   text-align: center;
 }
 .afg-img {
-  width: auto; // based on img own size
+  width: 100%; // based on img own size
 }
 
 .afg-img--icon-lg {
@@ -902,6 +944,7 @@ body {
 .afg-slider {
   display: block;
   position: relative;
+  margin: 0 auto;
 }
 
 // img container
@@ -933,16 +976,16 @@ body {
  **************************/
 
 .afg-img-slide-caption {
-  bottom: 18px;
   color: white;
+  font-weight: 700;
   left: 18px;
   position: absolute;
-  width: 65%;
+  width: 60%;
   z-index: 1;
 
   @media only screen and (min-width: 768px) {
-    bottom: 36px;
     left: 36px;
+    width: 75%;
   }
   @media only screen and (min-width: 992px) {
     left: 60px;
@@ -952,16 +995,19 @@ body {
   }
 }
 
-
+.afg-img-slide-caption, .afg-slider__controls {
+  bottom: 18px;
+  @media only screen and (min-width: 768px) {
+    bottom: 36px;
+  }
+}
 
 .afg-slider__controls {
   position: absolute;
-  bottom: 18px;
   right: 18px;
   z-index: 1;
 
   @media only screen and (min-width: 768px) {
-    bottom: 18px;
     right: 36px;
   }
   @media only screen and (min-width: 992px) {
