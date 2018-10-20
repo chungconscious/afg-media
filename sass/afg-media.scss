@@ -697,7 +697,13 @@ scratch - can reuse for other list or ul
 }
 
 
-.afg-form--page-bottom {
+/*
+This class is necessary bc using a global bottom padding on WP container
+makes it harder to control the bg-color.
+Using this, the bottom container on the page can easily specify the bg color
+to be included behind the padding
+*/
+.afg-page--bottom-gutter {
   padding-bottom: 72px;
 }
 
@@ -761,7 +767,7 @@ scratch - can reuse for other list or ul
 
 // do not override INPUT class as it causes issues w. buttons in
 // ninja forms since those are inputs as well.
-.afg-input {
+.afg-form__input-base {
   @extend .afg-form-element-height-override;
 
   -webkit-appearance: none !important;
@@ -779,20 +785,20 @@ scratch - can reuse for other list or ul
 
 
 // for fields & buttons
-.afg-form-field-container
-, .afg-form-submit-container {
+.afg-form__field-container
+, .afg-form__submit-container {
   display: block;
   width: 100%;
 }
 
 // email field
-.afg-form-text-input {
-  @extend .afg-input;
+.afg-form__field-textbox-input {
+  @extend .afg-form__input-base;
   width: 100% !important;
 }
 
 // button
-.afg-form-submit-cta {
+.afg-form__submit-cta {
   @extend .afg-btn;
   @extend .afg-btn-cta;
 
@@ -808,7 +814,7 @@ scratch - can reuse for other list or ul
   }
 }
 
-.afg-form-submit-cta.afg-form-submit-cta--tablet-245 {
+.afg-form__submit-cta.afg-form__submit-cta--tablet-245 {
   /*
   work around for ninja form so that on submit, the potential change in text
   length does not change button width & other elements around it
@@ -822,27 +828,36 @@ scratch - can reuse for other list or ul
 
 
 
-.afg-form-submit-cta:active {
+.afg-form__submit-cta:active {
   @extend .afg-btn:active !optional;
   @extend .afg-btn-cta:active !optional;
 }
-.afg-form-submit-cta:hover {
+.afg-form__submit-cta:hover {
   @extend .afg-btn:hover !optional;
   @extend .afg-btn-cta:hover !optional;
 }
-.afg-form-submit-cta:focus {
+.afg-form__submit-cta:focus {
   @extend .afg-btn:focus !optional;
   @extend .afg-btn-cta:focus !optional;
 }
-.afg-form-submit-cta:link {
+.afg-form__submit-cta:link {
   @extend .afg-btn:link !optional;
   @extend .afg-btn-cta:link !optional;
 }
 
-.afg-form-email {
-  @extend .afg-form-text-input;
+.afg-form__field-email {
+  @extend .afg-form__field-textbox-input;
+}
+.afg-form__field-name {
+  @extend .afg-form__field-textbox-input;
 }
 
+.afg-form__field-message {
+
+}
+.afg-form__field-services-offered {
+
+}
 
 
 /**************************
@@ -858,8 +873,8 @@ scratch - can reuse for other list or ul
 
 
 // in single field forms, get them to fit on one line
-.afg-form---single-field .afg-form-field-container
-, .afg-form---single-field .afg-form-submit-container
+.afg-form---single-field .afg-form__field-container
+, .afg-form---single-field .afg-form__submit-container
 {
   @media only screen and (min-width: 768px) {
     display: inline-block; //fallback just in case
@@ -868,7 +883,7 @@ scratch - can reuse for other list or ul
   }
 }
 
-.afg-form---single-field .afg-form-field-container {
+.afg-form---single-field .afg-form__field-container {
   @media only screen and (min-width: 768px) {
     /*
     can't use this - takes up whole row
