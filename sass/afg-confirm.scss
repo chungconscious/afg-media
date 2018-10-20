@@ -8,7 +8,9 @@
   padding-bottom: 24px;
 }
 
-.afg-confirm-submit__title {
+.afg-confirm-submit__title
+, .afg-contact-us__title {
+  margin-bottom: 24px;
   margin-top: 24px;
   text-align: center;
 }
@@ -31,3 +33,5 @@
   margin-bottom: 24px;
   text-align: left;
 }
+
+

@@ -78,6 +78,10 @@ body {
 }
 
 
+// hide search widget for now
+.search-widget-handle {
+  display: none;
+}
 
 /**************************
  **************************
@@ -85,6 +89,16 @@ body {
  **************************
  **************************/
 
+
+/*
+This class is necessary bc using a global bottom padding on WP container
+makes it harder to control the bg-color.
+Using this, the bottom container on the page can easily specify the bg color
+to be included behind the padding
+*/
+.afg-page--bottom-gutter {
+  padding-bottom: 72px;
+}
 
 .afg-section {
   padding-bottom: 60px;
@@ -175,7 +189,6 @@ scratch - can reuse for other list or ul
 
 .afg-heading--1, .afg-heading--2, .afg-heading--3, .afg-heading--4 {
   line-height: 1.5em;
-  padding: 0 24px;
 }
 
 .afg-heading--1 {
@@ -684,6 +697,15 @@ scratch - can reuse for other list or ul
  **************************
  **************************/
 
+
+// root containers
+.afg-form-container {
+}
+.afg-form---single-field-container {
+}
+
+
+// only put this directly on the form element. do not use within html with ninja forms - use ninja config instead to inject
 .afg-form {
   // assume padding will always have some top padding
   @extend .afg-hero--cont;
@@ -693,48 +715,72 @@ scratch - can reuse for other list or ul
 
   display: block;
   text-align: center;
-
 }
 
 
-/*
-This class is necessary bc using a global bottom padding on WP container
-makes it harder to control the bg-color.
-Using this, the bottom container on the page can easily specify the bg color
-to be included behind the padding
-*/
-.afg-page--bottom-gutter {
-  padding-bottom: 72px;
+// adding for css selector on labels
+.afg-form--with-field-labels {
 }
+.afg-form---single-field {
+}
+
+// add space between form fields
+.afg-form--with-field-labels .afg-form__field-container {
+  margin-bottom: 36px;
+}
+
+
+
+
+
+
+
 
 
 
 /**************************
-  overrides for ninja
+  ninja specific
  **************************/
-
 
 // get rid of spinner so that content below the form doesn't jump up after form load
 .nf-loading-spinner {
   margin: 12px auto !important;
 }
 
+
+/**************************
+  ninja specific - errors
+ **************************/
+// change color
 .nf-error-msg, .nf-error-field-errors {
   color: $error-color !important;
 }
-
 // give spacing to content below form
 .nf-after-form-content .nf-error-msg {
   margin-bottom: 48px !important;
+  text-align: center;
 }
-
 .nf-after-field .nf-error-msg {
   margin-top: 18px;
   margin-bottom: 18px;
 }
 
 
+/**************************
+  ninja specific  - labels
+ **************************/
+.label-above .nf-field-label {
+  margin-bottom: 18px !important;
+}
+.nf-field-label {
+  text-align: left;
+}
 
+
+
+/**************************
+  ninja specific  - fields
+ **************************/
 // without this, field containers use flex which causes
 // strange vertical alignments when including 2 fields on same line
 // eg on .afg-form---single-field-container @ 768+
@@ -747,17 +793,17 @@ to be included behind the padding
 .nf-form-fields-required {
   display: none;
 }
-
-// added specific for ninja
+// added specific for ninja to ensure their height is not used & reusing throughout my fields as well
 .afg-form-element-height-override {
-  height: 64px !important;
+  height: auto !important;
 }
-
-
-
+/*
+todo - is this used anywhere?
 .afg-form-hidden-container {
   display: none !important;
 }
+*/
+
 
 /**************************
  **************************
@@ -765,8 +811,11 @@ to be included behind the padding
  **************************
  **************************/
 
-// do not override INPUT class as it causes issues w. buttons in
-// ninja forms since those are inputs as well.
+/*
+  do not override <INPUT> tag as it causes issues w. buttons in
+  ninja forms since those are inputs as well.
+  Must use this class on input elements
+*/
 .afg-form__input-base {
   @extend .afg-form-element-height-override;
 
@@ -784,6 +833,17 @@ to be included behind the padding
 }
 
 
+/**************************
+  base form labels
+ **************************/
+.afg-form label {
+  font-size: 1em;
+}
+
+
+/**************************
+  base form containers for inputs & buttons
+ **************************/
 // for fields & buttons
 .afg-form__field-container
 , .afg-form__submit-container {
@@ -791,11 +851,76 @@ to be included behind the padding
   width: 100%;
 }
 
+/*
+  use this for ninja form so that when a confirmation msg is shown instead
+  of a redirect, there is separation from content above the form
+*/
+.afg-form__confirm-msg-separator {
+  padding-top: 96px;
+}
+
+
+/**************************
+  base form - text box & areas
+ **************************/
+
 // email field
 .afg-form__field-textbox-input {
   @extend .afg-form__input-base;
   width: 100% !important;
 }
+
+.afg-form__field-textarea-input {
+  @extend .afg-form__input-base;
+  width: 100% !important;
+
+  height: 10em !important;
+  line-height: 1.5em;
+}
+
+
+
+/**************************
+  base form - checkboxes
+ **************************/
+
+// added as work around to ninja issue where element name is not added to their element - only the container name. Must add this to ninja config for fields
+.afg-form__field-container--checkbox {
+}
+
+// removed .nf-field .nf-field-element before li to make it more generic
+.afg-form__field-container--checkbox li {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.afg-form__field-container--checkbox input {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 12px !important;
+  margin-left: 0 !important;
+}
+
+.afg-form__field-container--checkbox label {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  text-align: left;
+}
+
+
+.afg-form__field-checkbox {
+}
+
+
+
+
+/**************************
+  base form - buttons
+ **************************/
 
 // button
 .afg-form__submit-cta {
@@ -814,20 +939,6 @@ to be included behind the padding
   }
 }
 
-.afg-form__submit-cta.afg-form__submit-cta--tablet-245 {
-  /*
-  work around for ninja form so that on submit, the potential change in text
-  length does not change button width & other elements around it
-  */
-  @media only screen and (min-width: 768px) {
-    width: 245px !important;
-  }
-}
-
-
-
-
-
 .afg-form__submit-cta:active {
   @extend .afg-btn:active !optional;
   @extend .afg-btn-cta:active !optional;
@@ -845,30 +956,25 @@ to be included behind the padding
   @extend .afg-btn-cta:link !optional;
 }
 
-.afg-form__field-email {
-  @extend .afg-form__field-textbox-input;
-}
-.afg-form__field-name {
-  @extend .afg-form__field-textbox-input;
+/*
+  work around for ninja form so that on submit, the potential change in text
+  length does not change button width & other elements around it
+*/
+.afg-form__submit-cta.afg-form__submit-cta--tablet-245 {
+  @media only screen and (min-width: 768px) {
+    width: 245px !important;
+  }
 }
 
-.afg-form__field-message {
 
-}
-.afg-form__field-services-offered {
-
-}
 
 
 /**************************
   single forms - only 1 field & button
  **************************/
 
-// root container
-.afg-form---single-field-container {
-}
-
-.afg-form---single-field {
+.afg-form---single-field input {
+  height: 64px !important; // increase & standardize size
 }
 
 
@@ -895,6 +1001,19 @@ to be included behind the padding
     margin-right: 12px;
     width: 250px;
   }
+}
+
+
+
+/**************************
+  forms on home page
+ **************************/
+
+.afg-form__no-risk {
+  color: #454f5b;
+  font-size: .75em;
+  padding-bottom: 48px;
+  text-align: center;
 }
 
 
@@ -1088,4 +1207,39 @@ to be included behind the padding
   left: initial;
   right: 8px;
 }
+
+
+
+/**************************
+ **************************
+  WP override
+ **************************
+ **************************/
+
+
+footer {
+  background-color: rgba(26,35,43,1) !important;
+  padding: 48px 0 12px 0;
+  text-align: center;
+}
+
+footer .footer-widget {
+  width: 100% !important;
+}
+
+.afg-footer__about, .afg-footer__privacy {
+  color: white;
+  font-size: .8em;
+}
+
+
+.afg-footer__privacy {
+  //padding: 12px 0 0 0;
+}
+
+footer .footer-widget .widget_text {
+  margin-bottom: 12px;
+}
+
+
 

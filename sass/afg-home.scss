@@ -165,19 +165,6 @@ Stagger cards for look
 
 
 
-/**************************
-  forms on home page
- **************************/
-
-
-.afg-form__no-risk {
-  color: #454f5b;
-  font-size: .75em;
-  padding-bottom: 48px;
-}
-
-
-
 
 
 /**************************
@@ -250,7 +237,7 @@ Stagger cards for look
 
 
 .afg-img-wrapper--home-upcoming-map {
-  margin-top: 48px;
+  margin-bottom: 24px;
 }
 
 .afg-home-upcoming__locations-map {
@@ -258,21 +245,22 @@ Stagger cards for look
   @extend .afg-img--border-radius;
 }
 
-
-.afg-home-upcoming__body {
-  margin-top: 48px;
-
-}
-
-.afg-home-upcoming__locations {
-  list-style: none;
-  margin: 24px 0 0 0;
+.afg-home-upcoming__locations .afg-column {
+  color: $pop-color--hover;
+  font-size: 1.1em;
+  font-weight: 700;
   text-align: center;
 }
 
-.afg-home-upcoming__locations li {
+
+
+.afg-home-upcoming__body {
+  margin-top: 24px;
 
 }
+
+
+
 .afg-home-upcoming__cta-msg {
   margin: 24px 0 0 0;
 }
