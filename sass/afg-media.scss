@@ -108,6 +108,8 @@ body {
   margin-bottom: 30px !important;
 }
 
+
+// Use this abstract class on sections that is considered part of the hero banner but separated due to complexity
 .afg-hero--cont {
   // need to add color
   background-color: white;
@@ -641,18 +643,22 @@ body {
  **************************/
 
 .afg-form {
-  @extend .afg-width-two-thirds-tablet--centered;
+  // assume padding will always have some top padding
+  @extend .afg-hero--cont;
+
   // tried to switch to flex but cannot use flex as this has multiple nested elements before getting down to child elems in form
   //@extend .flex-row__valign_top-align_center--sm;
 
   display: block;
   text-align: center;
+
 }
 
 
-.afg-form--page-top {
-  @extend .afg-hero--cont;
+.afg-form--page-bottom {
+  padding-bottom: 72px;
 }
+
 
 
 /**************************
@@ -699,6 +705,11 @@ body {
   height: 64px !important;
 }
 
+
+
+.afg-form-hidden-container {
+  display: none !important;
+}
 
 /**************************
  **************************
@@ -846,6 +857,14 @@ body {
 .afg-img {
   width: auto; // based on img own size
 }
+
+.afg-img--icon-lg {
+  width: 64px;
+}
+.afg-img--icon-md {
+  width: 32px;
+}
+
 .afg-img--box-shadow {
   box-shadow: 0 0 15px 3px rgba(69,79,91,0.1);
 }
