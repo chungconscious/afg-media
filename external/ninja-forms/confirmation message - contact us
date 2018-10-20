@@ -1,0 +1,52 @@
+<div class="afg-form__confirm-msg-separator">
+    <div class="afg-img-wrapper">
+      <img class="afg-img afg-img--icon-lg" src="/wp-content/uploads/media/icons/confetti.png"/>
+    </div>
+
+
+    <h2 class="afg-heading--2 afg-section-heading afg-font--base-color afg-confirm-submit__title">
+      Congrats - you're one step closer to growing your online presence.
+    </h2>
+
+
+    <div class="afg-confirm-submit__action">
+      <div class="afg-confirm-submit__action-title">
+        Did you receive our confirmation email?
+      </div>
+      <div class="afg-confirm-submit__action-body">
+        <div class="afg-img-wrapper">
+          <img class="afg-img afg-img--icon-md" src="/wp-content/uploads/media/icons/confirm.png"/>
+        </div>
+        <p>
+          Please check your inbox (and spam folder).
+        </p>
+        <p>
+          If you’ve received the email, you’re all set!
+        </p>
+        <p>
+          We will contact you as soon as possible.
+        </p>
+      </div>
+
+
+      <div class="afg-confirm-submit__action">
+        <div class="afg-confirm-submit__action-title">
+          If you haven’t received our confirmation email...
+        </div>
+        <div class="afg-confirm-submit__action-body">
+          <div class="afg-img-wrapper">
+            <img class="afg-img afg-img--icon-md" src="/wp-content/uploads/media/icons/question.png"/>
+          </div>
+          <p>
+            Check if the email address below is your correct email address. If not, please update it and click the button below to resend your contact details.
+          </p>
+          <p>
+            Otherwise, please <a target="_blank" class="underline" href="mailto:hello@iktsu.com">click here to email us directly at hello@iktsu.com</a> and we apologize for the inconvenience.
+          </p>
+          <p>
+            Thanks!
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
