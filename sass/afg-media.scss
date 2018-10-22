@@ -103,11 +103,6 @@ to be included behind the padding
 .afg-section {
   padding-bottom: 60px;
   padding-top: 60px;
-
-  @media only screen and (min-width: 992px) {
-    padding-bottom: 96px;
-    padding-top: 96px;
-  }
 }
 
 // use this when section is at very top of page - otherwise, the padding is too much
@@ -143,9 +138,17 @@ to be included behind the padding
     padding-right: 0;
     width: 67%;
   }
-
   @media only screen and (min-width: 1200px) {
     width: 58%;
+  }
+}
+
+
+
+// Use this when 2/3 isn't quite wide enough in 768
+.afg-width-override--80-sm-to-md {
+  @media only screen and (min-width: 768px) and (max-width: $media-break-point-desktop-md - 1px)  {
+    width: 80% !important;
   }
 }
 
@@ -184,27 +187,36 @@ scratch - can reuse for other list or ul
 .afg-section-heading {
   margin-bottom: 48px;
   text-align: center;
+
+  // Assume basic width padding until screen is wider.
+  // If the text is really long, then it should be inside of a 2/3 container anyways
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @media only screen and (min-width: 992px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 
 .afg-heading--1, .afg-heading--2, .afg-heading--3, .afg-heading--4 {
+  color: #212B35;
   line-height: 1.5em;
 }
 
 .afg-heading--1 {
-  color: $primary-color--hover; //#ffa61d; //$pop-color;
   font-size: 1.75em;
   font-weight: 700;
   margin-bottom: .5em;
 
   @media only screen and (min-width: 992px) {
-    font-size: 3em;
+    font-size: 2.4em;
     margin-bottom: .85em;
   }
 }
 
 .afg-heading--2 {
-  color: #212B35;
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: .5em;
@@ -240,11 +252,11 @@ scratch - can reuse for other list or ul
   border-radius: 5px;
   border-style: none;
   box-shadow: none;
-  color: inherit;
   display: inline-block;
   font-weight: 700;
   outline: none !important;
   padding: 18px 30px;
+  text-align: center;
   text-decoration: none;
   white-space: normal;
 }
@@ -267,7 +279,7 @@ scratch - can reuse for other list or ul
 , .afg-btn-cta:active
 , .afg-btn-cta:hover
 , .afg-btn-cta:link {
-  color: white;
+  color: white !important;
 }
 
 
@@ -283,6 +295,26 @@ scratch - can reuse for other list or ul
 }
 
 
+
+.afg-btn-cta--invert
+, .afg-btn-cta--invert:focus
+, .afg-btn-cta--invert:active
+, .afg-btn-cta--invert:link {
+
+  @extend .afg-btn-cta;
+
+  border-color: $pop-color--hover;
+  border-style: solid;
+  border-width: 2px;
+
+  background-color: white;
+  color: $pop-color--hover !important;
+}
+
+.afg-btn-cta:hover {
+  background-color: $pop-color--hover;
+  color: white;
+}
 
 
 
@@ -338,7 +370,7 @@ scratch - can reuse for other list or ul
   line-height: 1.2em;
 
   @media only screen and (min-width: $media-break-point-desktop-lg) {
-    font-size: 2em;
+    font-size: 1.7em;
   }
 }
 
@@ -349,7 +381,6 @@ scratch - can reuse for other list or ul
 
 .afg_hero_subtitle_1, .afg_hero_subtitle_2,
 .afg_hero_subtitle_3 {
-  color: #637381;
   font-weight: 400;
   line-height: 1.2em;
 }
@@ -363,11 +394,16 @@ scratch - can reuse for other list or ul
 }
 
 .afg_hero_subtitle_2, .afg_hero_subtitle_3 {
-  font-size: 1em;
-  padding: 24px 0 0 0;
+  color: #343b42;
+  font-size: 1.2em;
 }
 
-
+.afg_hero_subtitle_2 {
+  padding: 48px 0 0 0;
+}
+.afg_hero_subtitle_3 {
+  padding: 24px 0 0 0;
+}
 
 /**************************
   Options to customize hero per page
@@ -607,6 +643,12 @@ scratch - can reuse for other list or ul
   margin-top: 36px;
 }
 
+
+.afg-card__cta-container--spacer {
+  padding-top: 72px;
+}
+
+
 .afg-card__body, .afg-card__cta-container {
   // default behavior for cards is to flip to row @ 768, and text becomes more crammed
   @media only screen and (min-width: 768px) {
@@ -708,7 +750,7 @@ scratch - can reuse for other list or ul
 // only put this directly on the form element. do not use within html with ninja forms - use ninja config instead to inject
 .afg-form {
   // assume padding will always have some top padding
-  @extend .afg-hero--cont;
+  padding-top: 30px !important;
 
   // tried to switch to flex but cannot use flex as this has multiple nested elements before getting down to child elems in form
   //@extend .flex-row__valign_top-align_center--sm;
@@ -1012,6 +1054,8 @@ todo - is this used anywhere?
 .afg-form__no-risk {
   color: #454f5b;
   font-size: .75em;
+  margin-left: 24px;  // margin in case parent container has border etc
+  margin-right: 24px;
   padding-bottom: 48px;
   text-align: center;
 }
@@ -1051,6 +1095,32 @@ todo - is this used anywhere?
 
 
 
+// will stretch to full size of parent
+.afg-img--bg-container {
+  display: block;
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+// base img container - specific classes should define url location
+.afg-img--bg {
+  display: block;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: inherit;
+  width: inherit;
+}
+
+
+
+
+
+
 /**************************
  **************************
  Base slider
@@ -1083,23 +1153,16 @@ todo - is this used anywhere?
 
 // img container
 .afg-slider__img-container {
-  display: block;
+  @extend .afg-img--bg-container;
+
   opacity: 0;
-  position: absolute;
   transition: all 0.5s;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   z-index: 0;
 }
 
 // the actual image - each will have diff class
 .afg-slider__img {
-  display: block;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @extend .afg-img--bg;
 }
 
 
@@ -1238,7 +1301,7 @@ footer .footer-widget {
 }
 
 footer .footer-widget .widget_text {
-  margin-bottom: 12px;
+  margin-bottom: 6px !important;
 }
 
 

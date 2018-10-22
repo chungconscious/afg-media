@@ -68,6 +68,15 @@
 
 
 
+//inside hero panel for testing - less top margin than when it's below
+//a service 'card' object
+.afg-home__service-row-text-panel .afg-service-fact {
+  margin-top: 36px !important;
+}
+
+
+
+
 /**************************
   Experience section
  **************************/
@@ -75,6 +84,9 @@
 .afg-home-soc {
   background-color: #e4e5e9;
 
+}
+
+.afg-home-soc__map-bg {
   @media only screen and (min-width: 768px) {
     background-image: url("/wp-content/uploads/media/banners/md/world-map.png");
     background-position: top;
@@ -86,7 +98,6 @@
     background-size: 1200px;
   }
 }
-
 
 .afg-grid--home-experience {
   @extend .flex-row__valign_top-align_center;
@@ -263,4 +274,17 @@ Stagger cards for look
 
 .afg-home-upcoming__cta-msg {
   margin: 24px 0 0 0;
+}
+
+
+
+.afg-home__bottom-form-wrapper {
+  // highlight the form when > sm
+  @media only screen and (min-width: 768px) {
+    background-color: white;
+    border-radius: 5px;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #aaa;
+  }
 }
