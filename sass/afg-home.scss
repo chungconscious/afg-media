@@ -237,6 +237,62 @@ Stagger cards for look
 
 
 
+
+
+/**************************
+  Our services
+ **************************/
+
+.afg-home__project-list-container {
+  background-color: #cde1e4;
+}
+
+.afg-home__project-list {
+  @extend .flex-row__valign_top-align_center;
+  max-width: 550px;
+  width: 90%;
+  // highlight the form when > sm
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+    // 8 / row
+    margin-bottom: 36px;
+    max-width: initial;
+    width: 100%;
+  }
+}
+
+.afg-service__project-container {
+  margin-bottom: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 24px;
+  text-align: center;
+  width: 96px;
+  @media only screen and (min-width: 992px) {
+    // move to 8 in row - drop margin
+    margin-bottom: 0;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 120px;
+  }
+}
+
+.afg-service__project-icon {
+  height: 48px;
+  width: 48px;
+}
+.afg-service__project-desc {
+  font-size: .8em;
+  margin-top: 12px;
+  @media only screen and (min-width: 1200px) {
+    font-size: .9em;
+  }
+}
+
+
+
+
 /**************************
   Upcoming section
  **************************/

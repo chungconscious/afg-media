@@ -80,7 +80,11 @@ body {
 
 // hide search widget for now
 .search-widget-handle {
-  display: none;
+  display: none !important;
+}
+
+.navbar-collapse {
+  text-align: right !important;
 }
 
 /**************************
@@ -111,6 +115,12 @@ to be included behind the padding
     padding-top: 24px;
   }
 }
+
+.afg-section--compact-spacing {
+  padding-bottom: 48px;
+  padding-top: 48px;
+}
+
 
 
 .afg-gutter-bottom {
@@ -225,6 +235,12 @@ scratch - can reuse for other list or ul
     font-size: 2.25em;
     margin-bottom: .85em;
   }
+}
+
+.afg-heading--3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: .5em;
 }
 
 .afg-heading--4 {
