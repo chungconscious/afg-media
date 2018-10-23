@@ -327,6 +327,7 @@ scratch - can reuse for other list or ul
   color: $pop-color--hover !important;
 }
 
+
 .afg-btn-cta:hover {
   background-color: $pop-color--hover;
   color: white;
@@ -949,13 +950,21 @@ todo - is this used anywhere?
 .afg-form__field-container--checkbox {
 }
 
+
+
+
 // removed .nf-field .nf-field-element before li to make it more generic
-.afg-form__field-container--checkbox li {
+.afg-form__field-container--checkbox .list-checkbox-wrap .nf-field-element li
+, .afg-form__field-container--checkbox .list-radio-wrap .nf-field-element li
+{
   margin-top: 0 !important;
   margin-bottom: 18px !important;
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
+
+
+
 
 .afg-form__field-container--checkbox input {
   margin-top: 0 !important;
