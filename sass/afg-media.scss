@@ -314,11 +314,8 @@ scratch - can reuse for other list or ul
 
 .afg-btn-cta--invert
 , .afg-btn-cta--invert:focus
-, .afg-btn-cta--invert:active
 , .afg-btn-cta--invert:link {
-
   @extend .afg-btn-cta;
-
   border-color: $pop-color--hover;
   border-style: solid;
   border-width: 2px;
@@ -328,9 +325,10 @@ scratch - can reuse for other list or ul
 }
 
 
-.afg-btn-cta:hover {
-  background-color: $pop-color--hover;
-  color: white;
+.afg-btn-cta:hover
+, .afg-btn-cta--invert:active {
+  background-color: $pop-color--hover !important;
+  color: white !important;
 }
 
 
