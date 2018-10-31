@@ -107,6 +107,7 @@ to be included behind the padding
 .afg-section {
   padding-bottom: 60px;
   padding-top: 60px;
+  text-align: center;
 }
 
 // use this when section is at very top of page - otherwise, the padding is too much
@@ -137,11 +138,15 @@ to be included behind the padding
 
 
 .afg-width-two-thirds-tablet--centered {
+  @extend .flex-base--max;
+
   padding-left: 18px;
   padding-right: 18px;
+  position: relative;
   width: 100%;
 
   @media only screen and (min-width: 768px) {
+    display: inline-block; // use this with margin auto to center container - parent must have text align
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -149,13 +154,16 @@ to be included behind the padding
     width: 67%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 58%;
+    width: 62%; //58%;
   }
 }
 
 .afg-width-half-tablet--centered {
+  @extend .flex-base--max;
+
   padding-left: 18px;
   padding-right: 18px;
+  position: relative;
   width: 100%;
 
   @media only screen and (min-width: 768px) {
@@ -1080,6 +1088,7 @@ todo - is this used anywhere?
   @media only screen and (min-width: 768px) {
     display: inline-block; //fallback just in case
     display: inline-grid;
+    margin-bottom: 12px;  // remove extra margin at bottom so that No Risk msg can be closer
     width: initial;
   }
 }
@@ -1226,7 +1235,7 @@ todo - is this used anywhere?
  **************************/
 
 .afg-img-slide-caption {
-  background-color: rgba(0,0,0, 0.2);
+  background-color: rgba(0,0,0, 0.3);
   padding: 12px;  // only necessary if using bg color
 
   color: white;
