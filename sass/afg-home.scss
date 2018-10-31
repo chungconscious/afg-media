@@ -252,38 +252,102 @@ Stagger cards for look
   Our services
  **************************/
 
-.afg-home__project-list-container {
+
+.afg-home__project-type-list-container {
   background-color: #cde1e4;
 }
 
+.afg-home__project-type-list-container > .afg-heading--2 {
+  // this heading just needs a bit of spacing on sides - don't need to use other css classes ie 2/3 or half
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// main container on home page
 .afg-home__project-list {
   @extend .flex-row__valign_top-align_center;
   max-width: 550px;
-  width: 90%;
+
   // highlight the form when > sm
   @media only screen and (min-width: 768px) {
   }
   @media only screen and (min-width: 992px) {
-    // 8 / row
     margin-bottom: 36px;
     max-width: initial;
     width: 100%;
   }
 }
 
-.afg-service__project-container {
-  margin-bottom: 24px;
-  margin-left: 12px;
-  margin-right: 12px;
+// flex container for the various categories
+.afg-home__project-type-list {
+  @extend .flex-column__valign_top-align_center;
+  @extend .flex-row__valign_top-align_center--md;
+}
+
+
+// container for each type
+.afg-service__project-type-container {
   margin-top: 24px;
-  text-align: center;
-  width: 96px;
+  position: relative;
+  width: 100%;
+
   @media only screen and (min-width: 992px) {
-    // move to 8 in row - drop margin
+    width: auto;
+  }
+}
+
+// override container to specify order & spacing
+.afg-service__project-type-container--website {
+  @media only screen and (min-width: 992px) {
+    margin-top: 0;
+    order: 2;
+  }
+}
+.afg-service__project-type-container--platforms {
+  @media only screen and (min-width: 992px) {
+    margin-top: 96px;
+    order: 1;
+  }
+}
+.afg-service__project-type-container--core {
+  @media only screen and (min-width: 992px) {
+    margin-top: 96px;
+    order: 3;
+  }
+}
+
+.afg-service__project-type-title {
+  @extend .afg-heading--3;
+  text-align: center;
+  width: 100%;
+}
+
+// list of services per project type / category
+.afg-service__project-list {
+  @extend .flex-row__valign_top-align_center;
+
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.afg-service__project-container {
+  display: inline-block;
+  margin-bottom: 24px;
+  margin-left: 9px;
+  margin-right: 9px;
+  margin-top: 12px;
+  text-align: center;
+  width: 84px;
+
+  @media only screen and (min-width: 992px) {
+    margin-left: 12px;
+    margin-right: 12px;
     margin-bottom: 0;
   }
   @media only screen and (min-width: 1200px) {
-    width: 120px;
+    width: 96px;
   }
 }
 
