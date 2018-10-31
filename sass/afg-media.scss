@@ -683,8 +683,14 @@ scratch - can reuse for other list or ul
 
 
 .afg-card__cta-container--spacer {
-  padding-top: 72px;
+  padding-top: 24px;
 }
+.afg-card__cta-container--spacer--tablet-only {
+  @media only screen and (max-width: $media-break-point-desktop-sm - 1px) {
+    padding-top: 0 !important;
+  }
+}
+
 
 
 .afg-card__body, .afg-card__cta-container {
