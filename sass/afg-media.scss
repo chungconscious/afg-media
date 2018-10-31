@@ -270,6 +270,7 @@ scratch - can reuse for other list or ul
   box-shadow: none;
   display: inline-block;
   font-weight: 700;
+  line-height: 1.5em;
   outline: none !important;
   padding: 18px 30px;
   text-align: center;
@@ -394,14 +395,10 @@ scratch - can reuse for other list or ul
 }
 
 
-.afg_hero_subtitle_1, .afg_hero_subtitle_2,
-.afg_hero_subtitle_3 {
-  font-weight: 400;
-  line-height: 1.2em;
-}
-
 .afg_hero_subtitle_1 {
   font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.2em;
   padding: 24px 0 0 0;
   @media only screen and (min-width: $media-break-point-desktop-lg) {
     font-size: 1.5em;
@@ -411,10 +408,16 @@ scratch - can reuse for other list or ul
 .afg_hero_subtitle_2, .afg_hero_subtitle_3 {
   color: #343b42;
   font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.2em;
 }
 
 .afg_hero_subtitle_2 {
-  padding: 48px 0 0 0;
+  padding: 24px 0 0 0;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    padding: 48px 0 0 0;
+  }
 }
 .afg_hero_subtitle_3 {
   padding: 24px 0 0 0;
@@ -823,6 +826,7 @@ scratch - can reuse for other list or ul
 .nf-after-field .nf-error-msg {
   margin-top: 18px;
   margin-bottom: 18px;
+  text-align: left;
 }
 
 

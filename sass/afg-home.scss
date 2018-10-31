@@ -117,7 +117,6 @@
   /* switch to smaller width so that the numbers don't line up directly
   over the cards - but don't do this @ 768 bc long text will flow to 2nd line */
 
-  margin-top: 24px;
   @media only screen and (min-width: 992px) {
     width: 25%;
   }
@@ -127,12 +126,6 @@
 .afg-grid--home-why-us {
   @extend .flex-row__valign_top-align_center;
   @extend .flex-base--max;
-
-  margin-top: 24px;
-
-  @media only screen and (min-width: 992px) {
-    margin-top: 72px;
-  }
 }
 
 
@@ -242,6 +235,16 @@ Stagger cards for look
 
 
 
+
+.afg-section-heading--home-exp {
+  margin-top: 48px;
+
+  @media only screen and (min-width: 992px) {
+    margin-top: 96px;
+  }
+  @media only screen and (min-width: 992px) {
+  }
+}
 
 
 
