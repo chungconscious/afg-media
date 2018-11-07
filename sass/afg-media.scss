@@ -297,7 +297,6 @@ scratch - can reuse for other list or ul
   font-weight: 700;
   line-height: 1.5em;
   outline: none !important;
-  padding: 18px 30px;
   text-align: center;
   text-decoration: none;
   white-space: normal;
@@ -310,6 +309,25 @@ scratch - can reuse for other list or ul
 }
 .afg-btn:link {
 }
+
+
+// looser top & bottom for i18n
+.afg-btn {
+  padding-top: initial;
+  padding-bottom: initial;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+// a buttons must use padding top
+// strict top/bottom
+a.afg-btn {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 
 .afg-btn--long-text {
   max-width: 260px;
@@ -1032,6 +1050,10 @@ todo - is this used anywhere?
 
   @extend .afg-form-element-height-override;
 
+  // adding minheight to ensure height since padding-top & bottom are removed
+  // to support multi-line cta text (e.g. ES i18n is longer than english and spills to 2nd line).
+  min-height: 64px;
+
   // fill screen in mobile
   width: 100% !important;
 
@@ -1358,6 +1380,13 @@ footer .footer-widget {
   width: 100% !important;
 }
 
+
+.afg-footer__site-map-link {
+  color: white;
+  margin-bottom: 24px;
+}
+
+
 .afg-footer__about, .afg-footer__privacy {
   color: white;
   font-size: .8em;
@@ -1373,6 +1402,48 @@ footer .footer-widget .widget_text {
 }
 
 
+
+.afg-footer__privacy-text {
+
+}
+
+
+.afg-footer__i18n-container {
+  margin: auto auto;
+  text-align: center;
+}
+
+
+/* Google Website Translator By Prisna */
+.afg-footer__i18n-container #google_translate_element {
+  display: none;
+}
+
+.afg-footer__i18n-container .prisna-gwt-flag-container {
+  text-align: center !important;
+}
+
+.afg-footer__i18n-container ul li {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  float: none !important;
+  display: inline-block;
+}
+
+
+/* Google Language Translator By Rob Myrick */
+.afg-footer__i18n-container #flags {
+  margin: auto;
+}
+.afg-footer__i18n-container #flags ul {
+  float: none !important;
+}
+.afg-footer__i18n-container #flags ul li {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  float: none !important;
+  display: inline-block;
+}
 
 
 
