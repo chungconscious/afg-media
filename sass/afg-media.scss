@@ -1050,6 +1050,10 @@ todo - is this used anywhere?
 
   @extend .afg-form-element-height-override;
 
+  // adding minheight to ensure height since padding-top & bottom are removed
+  // to support multi-line cta text (e.g. ES i18n is longer than english and spills to 2nd line).
+  min-height: 64px;
+
   // fill screen in mobile
   width: 100% !important;
 
