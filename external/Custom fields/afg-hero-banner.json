@@ -1,0 +1,193 @@
+[
+    {
+        "key": "group_5bc889f57d53f",
+        "title": "afg hero banner",
+        "fields": [
+            {
+                "key": "field_59b0a95e3ba38",
+                "label": "Hero Background Color",
+                "name": "afg_hero_background_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
+            },
+            {
+                "key": "field_59b0a9af3ba3a",
+                "label": "Image Source URL",
+                "name": "afg_hero_image_src",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_59b0bffbc33fe",
+                "label": "Hero Background Position",
+                "name": "afg_hero_background_position",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "center center",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_59b0a9913ba39",
+                "label": "Hero text color",
+                "name": "afg_hero_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#ffffff"
+            },
+            {
+                "key": "field_59b0aa0a3ba3e",
+                "label": "Hero Title",
+                "name": "afg_hero_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_59b0a9e33ba3b",
+                "label": "Hero Subtitle 1",
+                "name": "afg_hero_subtitle_1",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_59b0a9f43ba3c",
+                "label": "Hero Subtitle 2",
+                "name": "afg_hero_subtitle_2",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_59b0aa003ba3d",
+                "label": "Hero Subtitle 3",
+                "name": "afg_hero_subtitle_3",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bc8ad1871186",
+                "label": "Additional CSS classes",
+                "name": "afg_hero_classes_ext",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-templates\/full-width-iktsu-hero.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
