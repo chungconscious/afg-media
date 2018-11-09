@@ -96,13 +96,13 @@
   text-align: center;
 
   @media only screen and (min-width: 768px) {
-    background-image: url("/wp-content/uploads/media/banners/md/world-map.png");
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/world-map.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/media/banners/lg/world-map.png");
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/world-map.png");
     background-size: 1200px;
   }
 }
@@ -186,54 +186,54 @@ Stagger cards for look
  **************************/
 
 .afg-slider__img--hotels {
-  background-image: url("/wp-content/uploads/media/banners/sm/hotels.jpg");
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/hotels.jpg");
   @media only screen and (min-width: 512px) {
-    background-image: url("/wp-content/uploads/media/banners/md/hotels.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/hotels.jpg");
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/media/banners/lg/hotels.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/hotels.jpg");
   }
 }
 
 .afg-slider__img--scuba {
-  background-image: url("/wp-content/uploads/media/banners/sm/snorkeling-and-scuba-dive-shops.jpg");
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/snorkeling-and-scuba-dive-shops.jpg");
   @media only screen and (min-width: 512px) {
-    background-image: url("/wp-content/uploads/media/banners/md/snorkeling-and-scuba-dive-shops.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/snorkeling-and-scuba-dive-shops.jpg");
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/media/banners/lg/snorkeling-and-scuba-dive-shops.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/snorkeling-and-scuba-dive-shops.jpg");
   }
 }
 
 .afg-slider__img--trekking {
-  background-image: url("/wp-content/uploads/media/banners/sm/trekking-and-hiking-tours.jpg");
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/trekking-and-hiking-tours.jpg");
   @media only screen and (min-width: 512px) {
-    background-image: url("/wp-content/uploads/media/banners/md/trekking-and-hiking-tours.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/trekking-and-hiking-tours.jpg");
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/media/banners/lg/trekking-and-hiking-tours.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/trekking-and-hiking-tours.jpg");
   }
 }
 
 .afg-slider__img--hot-air-balloons {
-  background-image: url("/wp-content/uploads/media/banners/sm/hot-air-balloon-tours.jpg");
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/hot-air-balloon-tours.jpg");
   @media only screen and (min-width: 512px) {
-    background-image: url("/wp-content/uploads/media/banners/md/hot-air-balloon-tours.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/hot-air-balloon-tours.jpg");
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/media/banners/lg/hot-air-balloon-tours.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/hot-air-balloon-tours.jpg");
   }
 }
 
 
 
 .afg-slider__img--jeep-tours {
-  background-image: url("/wp-content/uploads/media/banners/sm/jeep-tours.jpg");
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/jeep-tours.jpg");
   @media only screen and (min-width: 512px) {
-    background-image: url("/wp-content/uploads/media/banners/md/jeep-tours.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/jeep-tours.jpg");
   }
   @media only screen and (min-width: 992px) {
-    background-image: url("/wp-content/uploads/media/banners/lg/jeep-tours.jpg");
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/jeep-tours.jpg");
   }
 }
 
@@ -432,6 +432,7 @@ Stagger cards for look
 
 //    width: initial;
 .afg-home__bottom-form-container {
+  padding-bottom: 96px;
   @media only screen and (min-width: 768px) {
     width: initial !important; // reduce width to remove extra white space
   }
