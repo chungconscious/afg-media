@@ -68,47 +68,66 @@ $post_category  = get_theme_mod( 'post_category', true );
 
 
 		<?php
-		/* afg CUSTOM HERO BANNER */
-		$afg_hero_background_color = get_post_meta($post->ID, 'afg_hero_background_color', true);
-		$afg_hero_color = get_post_meta($post->ID, 'afg_hero_color', true);
-		$afg_hero_title = get_post_meta($post->ID, 'afg_hero_title', true);
-		$afg_hero_subtitle_1 = get_post_meta($post->ID, 'afg_hero_subtitle_1', true);
-		$afg_hero_subtitle_2 = get_post_meta($post->ID, 'afg_hero_subtitle_2', true);
-		$afg_hero_subtitle_3 = get_post_meta($post->ID, 'afg_hero_subtitle_3', true);
-		$afg_hero_classes_ext = get_post_meta($post->ID, 'afg_hero_classes_ext', true);
-		$afg_hero_text_classes_ext = get_post_meta($post->ID, 'afg_hero_text_classes_ext', true);
 
+		/**********************************
+		1 - Handle main wrapper config
+		**********************************/
 
-		// Deprecate get_post_meta method. Use Advance Custom Fields since it's a less brittle solution than copying/pasting
-		// a URL (user can instead pick a file).
-		// $afg_hero_image_src = get_post_meta($post->ID, 'afg_hero_image_src', true);
+		// baseline config
+		$afg_hero_classes = 'afg_hero_wrapper';
+		$afg_hero_style = '';
 
-		// image class takes precedence since it would be more optimized.
-		// src will be for basic users
-		if ( get_field('afg_hero_image_classes') ) {
-			$afg_hero_image_classes = get_field('afg_hero_image_classes');
-		} elseif ( get_field('afg_hero_image_src') ) {
-			$afg_hero_image_src = get_field('afg_hero_image_src');
+		// read config
+		$afg_hero_background_color 			= get_post_meta($post->ID, 'afg_hero_background_color', true);
+		$afg_hero_color 								= get_post_meta($post->ID, 'afg_hero_color', true);
+		$afg_hero_classes_ext 					= get_post_meta($post->ID, 'afg_hero_classes_ext', true);
+
+		// append config
+		if ($afg_hero_classes_ext) {
+			$afg_hero_classes .= ' ' . $afg_hero_classes_ext;
+		}
+		if ($afg_hero_background_color != '') {
+			$afg_hero_style .= 'background-color:' . $afg_hero_background_color . ';';
+		}
+		if ($afg_hero_color != '') {
+			$afg_hero_style .= 'color:' . $afg_hero_color . ';';
 		}
 
-		/* SET HERO STYLE */
-		$afg_hero_style = '';		// init
 
-		// append bg color if set
-		if ($afg_hero_background_color != '') :
-			$afg_hero_style .= 'background-color:' . $afg_hero_background_color . ';';
-		endif;
+		/**********************************
+		2 - Handle text config
+		**********************************/
 
-		// append text color if set
-		if ($afg_hero_color != '') :
-			$afg_hero_style .= 'color:' . $afg_hero_color . ';';
-		endif;
-
-		/* GET IMAGE SRC */
-		// base classes
-		$afg_hero_classes = 'afg_hero_wrapper';
+		// baseline config
 		$afg_hero_text_classes = 'afg_hero_text_wrapper';
 
+		// read config
+		$afg_hero_title 								= get_post_meta($post->ID, 'afg_hero_title', true);
+		$afg_hero_subtitle_1 						= get_post_meta($post->ID, 'afg_hero_subtitle_1', true);
+		$afg_hero_subtitle_2 						= get_post_meta($post->ID, 'afg_hero_subtitle_2', true);
+		$afg_hero_subtitle_3 						= get_post_meta($post->ID, 'afg_hero_subtitle_3', true);
+		$afg_hero_text_classes_ext 			= get_post_meta($post->ID, 'afg_hero_text_classes_ext', true);
+
+		// append config
+		if ($afg_hero_text_classes_ext) {
+			$afg_hero_text_classes .= ' ' . $afg_hero_text_classes_ext;
+		}
+
+
+		/**********************************
+		3 - Handle image config
+
+			- image class takes precedence since it would be more optimized.
+			- src will be for basic users
+		**********************************/
+		// baseline config
+		// NA for images
+
+		// read config
+		$afg_hero_image_classes 				= get_post_meta($post->ID, 'afg_hero_image_classes', true);
+		$afg_hero_image_src 						= get_post_meta($post->ID, 'afg_hero_image_src', true);
+
+		// append config
 		if ($afg_hero_image_classes) {
 			// add img container to parent class
 			$afg_hero_classes .= ' afg_hero_image_container';
@@ -123,7 +142,6 @@ $post_category  = get_theme_mod( 'post_category', true );
 			$afg_hero_style .= 'background-image: url(' . $afg_hero_image_src . ');';
 			$afg_hero_style .= 'background-position:' . get_field('afg_hero_background_position') . ';';
 
-
 			/* append class to control background image css attrs - cover, etc */
 			$afg_hero_classes .= ' afg_hero_image_container';
 
@@ -133,15 +151,10 @@ $post_category  = get_theme_mod( 'post_category', true );
 
 
 
-		/* append class */
-		if ($afg_hero_classes_ext) {
-			$afg_hero_classes .= ' ' . $afg_hero_classes_ext;
-		}
-		if ($afg_hero_text_classes_ext) {
-			$afg_hero_text_classes .= ' ' . $afg_hero_text_classes_ext;
-		}
 
-		/* DISPLAY HERO */
+		/**********************************
+		4 - Display Hero
+		**********************************/
 		if ($afg_hero_title || $afg_hero_image_classes || $afg_hero_image_src || $afg_hero_background_color) :
 		?>
 
@@ -177,7 +190,6 @@ $post_category  = get_theme_mod( 'post_category', true );
 		<?php endif;
 		/* END afg CUSTOM HERO BANNER */
 		?>
-
 
 
 
