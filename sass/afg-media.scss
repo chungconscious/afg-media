@@ -385,6 +385,23 @@ a.afg-btn {
 
 // base wrapper class
 .afg_hero_wrapper {
+  position: relative;
+}
+
+.afg_hero_cta_wrapper {
+  @extend .flex-row__valign_bottom-align_center;
+  bottom: 0;
+  margin-bottom: 18px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    margin-bottom: 24px;
+  }
+}
+
+.afg_hero_cta {
 }
 
 
@@ -412,6 +429,19 @@ a.afg-btn {
 
   @extend .afg-width-two-thirds-tablet--centered;
 }
+
+.afg_hero_text_wrapper--md-half-strict {
+  @media only screen and (min-width: 992px) {
+    width: 50% !important;
+  }
+}
+
+.afg_hero_text_wrapper--lg-half-strict {
+  @media only screen and (min-width: 1200px) {
+    width: 50% !important;
+  }
+}
+
 
 .afg_hero_text_background {
  background-color: rgba(0,0,0,.4);
@@ -490,6 +520,10 @@ a.afg-btn {
 // Use this when adding more complex CTAs etc into hero banner. Instead of shoving it into hero, just make it part of standard page. And leave no gutter in hero so that the 2 are seamless.
 .afg_hero_text_wrapper--no-bottom-gutter {
   padding-bottom: 0 !important;
+}
+
+.afg-no-top-gutter {
+  padding-top: 0 !important;
 }
 
 
