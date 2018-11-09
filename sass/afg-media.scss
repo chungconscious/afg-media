@@ -385,6 +385,10 @@ a.afg-btn {
 
 // base wrapper class
 .afg_hero_wrapper {
+}
+
+
+.afg_hero_text_wrapper {
   -webkit-align-content: center !important;
   align-content: center !important;
   -webkit-align-content: center;
@@ -399,26 +403,18 @@ a.afg-btn {
   flex-wrap:         wrap;
 
   display: flex;
-  margin: 0;
-}
+  height: 400px;
+  //  margin: 0;
+  min-height: 300px;
 
-
-.afg_hero_text_wrapper {
   // no padding top or bottm - assumed to be valign center via flex
   text-align: center;
-
-  height: 400px;
-  min-height: 300px;
 
   @extend .afg-width-two-thirds-tablet--centered;
 }
 
 .afg_hero_text_background {
  background-color: rgba(0,0,0,.4);
-}
-
-.afg_hero_image_container {
- background-size: cover;
 }
 
 .afg_hero_title {
@@ -1215,6 +1211,8 @@ todo - is this used anywhere?
 .afg-slider
 , .afg-slider__img-container
 , .afg-slider__img
+, .afg_hero_image_container
+, .afg_hero_image
 {
   height: 400px;
   width: 100%;
@@ -1226,6 +1224,12 @@ todo - is this used anywhere?
     width: $media-break-point-desktop-max;
   }
 }
+
+.afg_hero_image {
+  @extend .afg-img--bg;
+  position: absolute;
+}
+
 
 
 // outer container

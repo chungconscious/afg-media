@@ -76,15 +76,20 @@ $post_category  = get_theme_mod( 'post_category', true );
 		$afg_hero_subtitle_2 = get_post_meta($post->ID, 'afg_hero_subtitle_2', true);
 		$afg_hero_subtitle_3 = get_post_meta($post->ID, 'afg_hero_subtitle_3', true);
 		$afg_hero_classes_ext = get_post_meta($post->ID, 'afg_hero_classes_ext', true);
-
+		$afg_hero_text_classes_ext = get_post_meta($post->ID, 'afg_hero_text_classes_ext', true);
 
 
 		// Deprecate get_post_meta method. Use Advance Custom Fields since it's a less brittle solution than copying/pasting
 		// a URL (user can instead pick a file).
 		// $afg_hero_image_src = get_post_meta($post->ID, 'afg_hero_image_src', true);
-		if( get_field('afg_hero_image_src') ):
+
+		// image class takes precedence since it would be more optimized.
+		// src will be for basic users
+		if ( get_field('afg_hero_image_classes') ) {
+			$afg_hero_image_classes = get_field('afg_hero_image_classes');
+		} elseif ( get_field('afg_hero_image_src') ) {
 			$afg_hero_image_src = get_field('afg_hero_image_src');
-		endif;
+		}
 
 		/* SET HERO STYLE */
 		$afg_hero_style = '';		// init
@@ -104,8 +109,17 @@ $post_category  = get_theme_mod( 'post_category', true );
 		$afg_hero_classes = 'afg_hero_wrapper';
 		$afg_hero_text_classes = 'afg_hero_text_wrapper';
 
-		if ($afg_hero_image_src) :
+		if ($afg_hero_image_classes) {
+			// add img container to parent class
+			$afg_hero_classes .= ' afg_hero_image_container';
+
+			/* append shaded background color to text to make it pop from image */
+			// TODO: add this as a parameter in custom fields
+			// $afg_hero_text_classes .= ' afg_hero_text_background';
+		}
+		elseif ($afg_hero_image_src) {
 			/* append dynamically the image url & position */
+			// TODO - refactor this to fit image classes impl above
 			$afg_hero_style .= 'background-image: url(' . $afg_hero_image_src . ');';
 			$afg_hero_style .= 'background-position:' . get_field('afg_hero_background_position') . ';';
 
@@ -115,21 +129,28 @@ $post_category  = get_theme_mod( 'post_category', true );
 
 			/* append shaded background color to text to make it pop from image */
 			$afg_hero_text_classes .= ' afg_hero_text_background';
-		endif;
+		}
 
 
-		if ($afg_hero_classes_ext) :
-			/* append class */
-			$afg_hero_text_classes .= ' ' . $afg_hero_classes_ext;
-		endif;
 
-
+		/* append class */
+		if ($afg_hero_classes_ext) {
+			$afg_hero_classes .= ' ' . $afg_hero_classes_ext;
+		}
+		if ($afg_hero_text_classes_ext) {
+			$afg_hero_text_classes .= ' ' . $afg_hero_text_classes_ext;
+		}
 
 		/* DISPLAY HERO */
-		if ($afg_hero_title || $afg_hero_image_src || $afg_hero_background_color) :
+		if ($afg_hero_title || $afg_hero_image_classes || $afg_hero_image_src || $afg_hero_background_color) :
 		?>
 
 			<div class="<?php echo $afg_hero_classes;?>" style="<?php echo $afg_hero_style;?>" >
+
+				<?php if ($afg_hero_image_classes) : ?>
+				<div class="<?php echo $afg_hero_image_classes;?>"></div>
+				<?php endif; ?>
+
 				<div class="<?php echo $afg_hero_text_classes;?>">
 
 					<h1 class="afg_hero_title"><?php echo $afg_hero_title; ?></h1>
