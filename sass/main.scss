@@ -36,7 +36,7 @@ $color-standard: rgba(0,0,0,.8);
 
 // Contrast pop color to iktsu blues
 $pop-color: #f7ab59; //#F5BC64;
-$pop-color--hover: #f7ab59de; //#F0B04B;
+$pop-color--hover: #f7ab59; //f7ab59de; //#F0B04B;
 
 
 // Pricinpal iktsu light blue
@@ -253,3 +253,5 @@ $page-padding-for-wf-nav: 92px;
 @import "afg-media";
 @import "afg-home";
 @import "afg-confirm";
+
+@import "afg-website-pages";
