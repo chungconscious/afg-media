@@ -527,6 +527,10 @@ a.afg-btn {
 }
 
 
+.afg-page-bottom-gutter {
+  padding-bottom: 96px;
+}
+
 
 
 .afg-table {
@@ -845,6 +849,25 @@ a.afg-btn {
 }
 .afg-form---single-field-container {
 }
+
+
+
+
+.afg-callout-bg-color {
+  background-color: #e4e5e9;
+}
+
+//    width: initial;
+.afg-form-container--callout {
+  @media only screen and (min-width: 768px) {
+    max-width: 700px; // keep size consistent
+    width: initial !important; // reduce width to remove extra white space
+  }
+}
+
+
+
+
 
 
 // only put this directly on the form element. do not use within html with ninja forms - use ninja config instead to inject
