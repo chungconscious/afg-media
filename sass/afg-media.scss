@@ -519,6 +519,7 @@ a.afg-btn {
 
 // Use this when adding more complex CTAs etc into hero banner. Instead of shoving it into hero, just make it part of standard page. And leave no gutter in hero so that the 2 are seamless.
 .afg_hero_text_wrapper--no-bottom-gutter {
+  margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
 
