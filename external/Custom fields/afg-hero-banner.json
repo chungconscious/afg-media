@@ -4,11 +4,11 @@
         "title": "afg hero banner",
         "fields": [
             {
-                "key": "field_59b0a95e3ba38",
-                "label": "Hero Background Color",
-                "name": "afg_hero_background_color",
-                "type": "color_picker",
-                "instructions": "",
+                "key": "field_5be5fa13739b3",
+                "label": "Hero wrapper ID",
+                "name": "afg_hero_id",
+                "type": "text",
+                "instructions": "Insert ID for GTM",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -16,36 +16,16 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": ""
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
             },
             {
-                "key": "field_59b0a9af3ba3a",
-                "label": "Image Source URL",
-                "name": "afg_hero_image_src",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_59b0bffbc33fe",
-                "label": "Hero Background Position",
-                "name": "afg_hero_background_position",
+                "key": "field_5bc8ad1871186",
+                "label": "Additional Hero wrapper CSS classes",
+                "name": "afg_hero_classes_ext",
                 "type": "text",
                 "instructions": "",
                 "required": 0,
@@ -55,7 +35,7 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "center center",
+                "default_value": "",
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
@@ -153,9 +133,181 @@
                 "maxlength": ""
             },
             {
-                "key": "field_5bc8ad1871186",
-                "label": "Additional CSS classes",
-                "name": "afg_hero_classes_ext",
+                "key": "field_5be4f3ec48752",
+                "label": "Additional CSS text classes",
+                "name": "afg_hero_text_classes_ext",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_59b0a95e3ba38",
+                "label": "Hero Background Color",
+                "name": "afg_hero_background_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
+            },
+            {
+                "key": "field_5be4e486a4dbd",
+                "label": "Image Source Classes",
+                "name": "afg_hero_image_classes",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_59b0a9af3ba3a",
+                "label": "Image Source URL",
+                "name": "afg_hero_image_src",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_59b0bffbc33fe",
+                "label": "Hero Background Position",
+                "name": "afg_hero_background_position",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "center center",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5be5b93dfba09",
+                "label": "CTA text",
+                "name": "afg_hero_cta_text",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5be5b998fba0b",
+                "label": "CTA href",
+                "name": "afg_hero_cta_href",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5be5c1e8f4156",
+                "label": "CTA id",
+                "name": "afg_hero_cta_id",
+                "type": "text",
+                "instructions": "Used for GTM & GA to id button clicked",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5be5b974fba0a",
+                "label": "Additional CSS cta classes",
+                "name": "afg_hero_cta_classes_ext",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "afg-btn-cta--invert",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5be5ba4156f0c",
+                "label": "Additional CSS cta wrapper classes",
+                "name": "afg_hero_cta_wrapper_classes_ext",
                 "type": "text",
                 "instructions": "",
                 "required": 0,
@@ -182,7 +334,112 @@
             ]
         ],
         "menu_order": 0,
-        "position": "acf_after_title",
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5be6fe88eaf2a",
+        "title": "afg meta",
+        "fields": [
+            {
+                "key": "field_5be6fe9970a19",
+                "label": "afg_key",
+                "name": "afg_key",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5be70578ddbd4",
+        "title": "afg revenue calculator",
+        "fields": [
+            {
+                "key": "field_5be7058972d76",
+                "label": "funnel exit percentage",
+                "name": "afg_funnel_exit_percent",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5be705ac72d77",
+                "label": "funnel exit prevention desc",
+                "name": "afg_funnel_exit_prevent_desc",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",

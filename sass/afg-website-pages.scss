@@ -1,0 +1,19 @@
+.afg-website-speed-pg__body {
+}
+
+
+.afg-website-speed-pg__hero-img {
+  @extend .afg_hero_image;
+
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/slow-website-turtle.jpg");
+  background-position: bottom center;
+
+
+
+  @media only screen and (min-width: 512px) {
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/slow-website-turtle.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/slow-website-turtle.jpg");
+  }
+}

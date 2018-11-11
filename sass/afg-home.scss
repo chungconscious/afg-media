@@ -88,8 +88,6 @@
  **************************/
 
 .afg-home-soc {
-  background-color: #e4e5e9;
-
 }
 
 .afg-home-soc__map-bg {
@@ -430,13 +428,6 @@ Stagger cards for look
 }
 
 
-//    width: initial;
-.afg-home__bottom-form-container {
-  padding-bottom: 96px;
-  @media only screen and (min-width: 768px) {
-    width: initial !important; // reduce width to remove extra white space
-  }
-}
 
 .afg-home__bottom-form-wrapper {
   // highlight the form when > sm

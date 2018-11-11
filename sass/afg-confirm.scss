@@ -35,3 +35,69 @@
 }
 
 
+
+
+
+/**************************
+ **************************
+  Revenue calculator pages
+ **************************
+ **************************/
+
+.afg-calc-potential {
+}
+
+.afg-calc-potential_heading {
+  @extend .afg-heading--2;
+  @extend .afg_hero_text_wrapper--no-bottom-gutter;
+}
+
+.afg-calc-potential_input {
+  margin-bottom: 24px;
+}
+
+.afg-calc-potential_body, .afg-calc-potential_cta {
+  margin: 0 auto;
+}
+
+.afg-calc-potential_body {
+  font-size: 1.1em;
+  max-width: 450px;
+}
+
+.afg-calc-potential_cta {
+  @extend .afg-heading--3;
+  margin-top: 48px;
+  max-width: 600px;
+}
+
+
+// using CSS selector on SPAN tag to override ninja form css
+
+.afg-calc-potential_curr-num
+, .afg-calc-potential_curr-num span {
+  font-weight: 700 !important;
+}
+
+.afg-calc-potential_action {
+
+}
+
+.afg-calc-potential_loss-percentage
+, .afg-calc-potential_loss-percentage  span {
+  color: $error-color;
+  font-weight: 700 !important;
+}
+
+.afg-calc-potential_gain
+, .afg-calc-potential_gain span {
+  color: $success-color;
+  font-weight: 700 !important;
+}
+
+.afg-calc-potential_gainx5
+, .afg-calc-potential_gainx5 span {
+  color: $success-color;
+  font-weight: 700 !important;
+}
+
