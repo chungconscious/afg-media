@@ -386,6 +386,7 @@ a.afg-btn {
 // base wrapper class
 .afg_hero_wrapper {
   position: relative;
+  text-align: center;
 }
 
 .afg_hero_cta_wrapper {
@@ -404,22 +405,18 @@ a.afg-btn {
 .afg_hero_cta {
 }
 
+.afg_hero_text_mask {
+  position: relative;
+}
+.afg_hero_text_mask--dark-1 {
+  background-color: rgba(0,0,0,.1);
+}
+
 
 .afg_hero_text_wrapper {
-  -webkit-align-content: center !important;
-  align-content: center !important;
-  -webkit-align-content: center;
-  align-content: center;
-  -webkit-flex-direction: column; /* Safari */
-  flex-direction:         column;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap; /* Safari */
-  flex-wrap:         wrap;
+  // default valign center
+  @extend .flex-row__valign_center-align_center;
 
-  display: flex;
   height: 400px;
   //  margin: 0;
   min-height: 300px;
@@ -427,8 +424,30 @@ a.afg-btn {
   // no padding top or bottm - assumed to be valign center via flex
   text-align: center;
 
+  @media only screen and (min-width: $media-break-point-desktop-lg) {
+    font-size: 1.5em;
+  }
+
+
   @extend .afg-width-two-thirds-tablet--centered;
 }
+
+.afg_hero_text_wrapper--top-align {
+  -webkit-align-content:      flex-start !important; /* Safari */
+  align-content:              flex-start !important;
+
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+  @media only screen and (min-width: $media-break-point-desktop-md) {
+    padding-bottom: 48px;
+    padding-top: 48px;
+  }
+}
+
+
+
+
 
 .afg_hero_text_wrapper--md-half-strict {
   @media only screen and (min-width: 992px) {
@@ -1271,6 +1290,7 @@ todo - is this used anywhere?
 , .afg-slider__img
 , .afg_hero_image_container
 , .afg_hero_image
+, .afg_hero_text_mask
 {
   height: 400px;
   width: 100%;
@@ -1421,6 +1441,15 @@ todo - is this used anywhere?
 .fa-afg-slider--right {
   left: initial;
   right: 8px;
+}
+
+
+
+
+
+
+.afg-gallery-cta-container {
+  padding-top: 24px;
 }
 
 
