@@ -17,3 +17,21 @@
     background-image: url("../../../../../wp-content/uploads/media/banners/lg/slow-website-turtle.jpg");
   }
 }
+
+
+
+.afg-service-photo-interior__hero-img {
+  @extend .afg_hero_image;
+
+  background-image: url("../../../../../wp-content/uploads/media/banners/sm/photography-for-hotels-and-accommodations.jpg");
+  background-position: bottom center;
+
+
+
+  @media only screen and (min-width: 512px) {
+    background-image: url("../../../../../wp-content/uploads/media/banners/md/photography-for-hotels-and-accommodations.jpg");
+  }
+  @media only screen and (min-width: 992px) {
+    background-image: url("../../../../../wp-content/uploads/media/banners/lg/photography-for-hotels-and-accommodations.jpg");
+  }
+}
