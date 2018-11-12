@@ -511,10 +511,6 @@ a.afg-btn {
     padding-bottom: 48px;
     padding-top: 48px;
   }
-
-  @media only screen and (min-width: $media-break-point-desktop-lg) {
-    font-size: 1.5em;
-  }
 }
 
 // Use this when adding more complex CTAs etc into hero banner. Instead of shoving it into hero, just make it part of standard page. And leave no gutter in hero so that the 2 are seamless.
