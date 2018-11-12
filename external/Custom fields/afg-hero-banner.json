@@ -57,6 +57,25 @@
                 "default_value": "#ffffff"
             },
             {
+                "key": "field_5be9a37f52341",
+                "label": "Hero text bg mask",
+                "name": "afg_hero_text_mask_classes_ext",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_59b0aa0a3ba3e",
                 "label": "Hero Title",
                 "name": "afg_hero_title",
