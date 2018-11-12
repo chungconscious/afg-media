@@ -81,6 +81,7 @@ $post_category  = get_theme_mod( 'post_category', true );
 		$afg_hero_background_color 			= get_post_meta($post->ID, 'afg_hero_background_color', true);
 		$afg_hero_color 								= get_post_meta($post->ID, 'afg_hero_color', true);
 		$afg_hero_classes_ext 					= get_post_meta($post->ID, 'afg_hero_classes_ext', true);
+		$afg_hero_text_style = '';
 
 		// append config
 		if ($afg_hero_classes_ext) {
@@ -90,7 +91,7 @@ $post_category  = get_theme_mod( 'post_category', true );
 			$afg_hero_style .= 'background-color:' . $afg_hero_background_color . ';';
 		}
 		if ($afg_hero_color != '') {
-			$afg_hero_style .= 'color:' . $afg_hero_color . ';';
+			$afg_hero_text_style .= 'color:' . $afg_hero_color . ' !important;';
 		}
 
 
@@ -100,6 +101,7 @@ $post_category  = get_theme_mod( 'post_category', true );
 
 		// baseline config
 		$afg_hero_text_classes = 'afg_hero_text_wrapper';
+		$afg_hero_text_mask_classes = '';
 
 		// read config
 		$afg_hero_title 								= get_post_meta($post->ID, 'afg_hero_title', true);
@@ -107,10 +109,16 @@ $post_category  = get_theme_mod( 'post_category', true );
 		$afg_hero_subtitle_2 						= get_post_meta($post->ID, 'afg_hero_subtitle_2', true);
 		$afg_hero_subtitle_3 						= get_post_meta($post->ID, 'afg_hero_subtitle_3', true);
 		$afg_hero_text_classes_ext 			= get_post_meta($post->ID, 'afg_hero_text_classes_ext', true);
+		$afg_hero_text_mask_classes_ext = get_post_meta($post->ID, 'afg_hero_text_mask_classes_ext', true);
 
 		// append config
 		if ($afg_hero_text_classes_ext) {
 			$afg_hero_text_classes .= ' ' . $afg_hero_text_classes_ext;
+		}
+		if ($afg_hero_text_mask_classes_ext) {
+			// mask ext is required to make this work.
+			// otherwise, afg_hero_text_mask will make every header a fixed size - even when height should be initial
+			$afg_hero_text_mask_classes .= 'afg_hero_text_mask ' . $afg_hero_text_mask_classes_ext;
 		}
 
 
@@ -189,27 +197,29 @@ $post_category  = get_theme_mod( 'post_category', true );
 				<div class="<?php echo $afg_hero_image_classes;?>"></div>
 				<?php endif; ?>
 
+				<div class="<?php echo $afg_hero_text_mask_classes;?>">
 				<div class="<?php echo $afg_hero_text_classes;?>">
 
-					<h1 class="afg_hero_title"><?php echo $afg_hero_title; ?></h1>
+					<h1 class="afg_hero_title" style="<?php echo $afg_hero_text_style;?>"><?php echo $afg_hero_title; ?></h1>
 
 					<?php if ($afg_hero_subtitle_1) : ?>
-						<div class="afg_hero_subtitle_1">
+						<div class="afg_hero_subtitle_1" style="<?php echo $afg_hero_text_style;?>">
 							<?php echo $afg_hero_subtitle_1; ?>
 						</div>
 						<?php endif; ?>
 
 					<?php if ($afg_hero_subtitle_2) : ?>
-						<div class="afg_hero_subtitle_2">
+						<div class="afg_hero_subtitle_2" style="<?php echo $afg_hero_text_style;?>">
 							<?php echo $afg_hero_subtitle_2; ?>
 						</div>
 						<?php endif; ?>
 
 					<?php if ($afg_hero_subtitle_3) : ?>
-						<div class="afg_hero_subtitle_3">
+						<div class="afg_hero_subtitle_3" style="<?php echo $afg_hero_text_style;?>">
 							<?php echo $afg_hero_subtitle_3; ?>
 						</div>
 						<?php endif; ?>
+				</div>
 				</div>
 
 
